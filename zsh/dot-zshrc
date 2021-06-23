@@ -1,0 +1,8 @@
+export PATH=/home/adam/.local/bin:/home/adam/bin:/usr/local/bin:/usr/bin:/bin:/snap/bin
+export ZSH="/home/adam/.oh-my-zsh"
+ZSH_THEME="minimal"
+# CASE_SENSITIVE="true"
+ENABLE_CORRECTION="true"
+plugins=(git asdf ag bundler colored-man-pages colorize docker-compose docker-machine docker dotenv gem mix npm rails rake redis-cli ruby tmux yarn)
+
+source $ZSH/oh-my-zsh.sh

@@ -1,0 +1,109 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: Noto Mono;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: #1d1f21;
+  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+  color: #c5c8c6;
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+window#waybar.termite {
+  background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+  background-color: #000000;
+  border: none;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
+  color: #c5c8c6;
+  box-shadow: inset 0 -3px transparent;
+}
+
+#workspaces button:hover {
+  background: #1d1f21;
+  box-shadow: inset 0 -3px #c5c8c6;
+}
+
+#workspaces button.focused {
+  background-color: #64727D;
+  box-shadow: inset 0 -3px #c5c8c6;
+}
+
+#workspaces button.urgent {
+  background-color: #cc6666;
+}
+
+#mode {
+  background-color: #64727D;
+  border-bottom: 3px solid #c5c8c6;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd {
+  padding: 0 10px;
+  margin: 0 4px;
+  color: #c5c8c6;
+}
+
+#window,
+#workspaces {
+  margin: 0 4px;
+}
+
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+
+@keyframes blink {
+  to {
+    background-color: #c5c8c6;
+    color: #000000;
+  }
+}
+
+
+label:focus {
+  background-color: #000000;
+}
+
+
+#custom-media {
+  min-width: 100px;
+}
+
+#language {
+  padding: 0 5px;
+  margin: 0 5px;
+  min-width: 16px;
+}

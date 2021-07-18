@@ -46,6 +46,13 @@ set shiftwidth=2
 set autoindent
 set smartindent
 
+" autoformat
+autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.rb lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.erb lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.yaml lua vim.lsp.buf.formatting_sync(nil, 100)
+
 " plugin stuff
 let test#strategy = "dispatch"
 nmap <silent> t<C-n> :TestNearest<CR>

@@ -13,6 +13,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-commentary'
 Plug 'dyng/ctrlsf.vim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'tpope/vim-eunuch'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
 " TSInstall css
 " TSInstall elixir

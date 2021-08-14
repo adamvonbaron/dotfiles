@@ -27,6 +27,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
 " TSInstall python
 
 Plug 'nvim-lua/completion-nvim'
+Plug 'psf/black', { 'branch': 'stable' }
 
 call plug#end()
 
@@ -143,3 +144,6 @@ set completeopt=menuone,noinsert,noselect
 
 " Avoid showing message extra message when using completion
 set shortmess+=c
+
+" format python files with black on save
+autocmd BufWritePre *.py execute ':Black'

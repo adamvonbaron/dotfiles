@@ -24,6 +24,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
 " TSInstall scss
 " TSInstall typescript
 " TSInstall yaml
+" TSInstall python
 
 call plug#end()
 
@@ -104,7 +105,20 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "yamlls", "cssls", "tsserver", "dockerls", "elixirls", "graphql", "html", "jsonls", "solargraph", "tsserver", "sqls" }
+local servers = {
+  "yamlls",
+  "cssls",
+  "tsserver",
+  "dockerls",
+  "elixirls",
+  "graphql",
+  "html",
+  "jsonls",
+  "solargraph",
+  "tsserver",
+  "sqls",
+  "pyright"
+}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,

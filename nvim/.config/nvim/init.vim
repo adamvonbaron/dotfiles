@@ -28,6 +28,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
 
 Plug 'nvim-lua/completion-nvim'
 Plug 'psf/black', { 'branch': 'stable' }
+Plug 'elixir-editors/vim-elixir'
 
 call plug#end()
 
@@ -113,7 +114,6 @@ local servers = {
   "cssls",
   "tsserver",
   "dockerls",
-  "elixirls",
   "graphql",
   "html",
   "jsonls",
@@ -130,6 +130,12 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
+-- have to tell nvim where elixirls is located, not stored in project by default
+-- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#elixirls
+nvim_lsp["elixirls"].setup{
+  cmd = { vim.loop.os_homedir() .. "/bin/elixirls" }
+}
 EOF
 
 " completion.nvim for autocomplete alongisde neovim's native lsp

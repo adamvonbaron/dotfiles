@@ -79,6 +79,24 @@ lua << EOF
 require("telescope").setup()
 local nvim_lsp = require('lspconfig')
 
+-- treesitter
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+    "typescript",
+    "javascript",
+    "json",
+    "python",
+    "html",
+    "scss",
+    "graphql",
+    "yaml",
+    "ruby"
+  },
+  highlight = {
+    enable = true,
+  }
+}
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -298,25 +316,6 @@ ins_left {
 -- Insert mid section. You can make any number of sections in neovim :)
 -- for lualine it's any number greater then 2
 ins_left {function() return '%=' end}
-
-ins_left {
-  -- Lsp server name .
-  function()
-    local msg = 'No Active Lsp'
-    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-    local clients = vim.lsp.get_active_clients()
-    if next(clients) == nil then return msg end
-    for _, client in ipairs(clients) do
-      local filetypes = client.config.filetypes
-      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-        return client.name
-      end
-    end
-    return msg
-  end,
-  icon = ' LSP:',
-  color = {fg = '#ffffff', gui = 'bold'}
-}
 
 -- Add components to right sections
 ins_right {

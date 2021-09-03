@@ -90,7 +90,7 @@ require'nvim-treesitter.configs'.setup {
     "scss",
     "graphql",
     "yaml",
-    "ruby"
+    "ruby",
   },
   highlight = {
     enable = true,
@@ -143,7 +143,8 @@ local servers = {
   "solargraph",
   "tsserver",
   "sqls",
-  "pyright"
+  "pyright",
+  "vuels",
 }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
@@ -158,6 +159,16 @@ end
 -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#elixirls
 nvim_lsp["elixirls"].setup{
   cmd = { vim.loop.os_homedir() .. "/bin/elixirls" }
+}
+
+-- diagnosticls setup for eslint in js/ts/vue files
+nvim_lsp["diagnosticls"].setup{
+  filetypes = {"javascript", "typescript", "vue"},
+  init_options = {
+    javascript = "eslint",
+    typescript = "eslint",
+    vue = "eslint"
+  }
 }
 
 local lualine = require 'lualine'

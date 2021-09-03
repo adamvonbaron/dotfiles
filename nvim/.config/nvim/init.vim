@@ -164,12 +164,10 @@ nvim_lsp["elixirls"].setup{
   cmd = { vim.loop.os_homedir() .. "/bin/elixirls" }
 }
 
--- diagnosticls setup for eslint in js/ts/vue files
+-- diagnosticls setup for eslint in vue files
 nvim_lsp["diagnosticls"].setup{
-  filetypes = {"javascript", "typescript", "vue"},
+  filetypes = {"vue"},
   init_options = {
-    javascript = "eslint",
-    typescript = "eslint",
     vue = "eslint"
   }
 }

@@ -31,6 +31,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'folke/trouble.nvim'
+Plug 'prettier/vim-prettier', {
+      \  'do': 'yarn install',
+      \  'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'html'] }
 
 call plug#end()
 
@@ -74,7 +77,7 @@ nmap <silent> t<C-g> :TestVisit<CR>
 set list listchars=tab:»·,trail:·,nbsp:·
 noremap <Leader>W :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
-" nvim-lspconfig default stuff
+" nvim-lspconfig and treesitter default stuff
 lua << EOF
 require("telescope").setup()
 local nvim_lsp = require('lspconfig')
@@ -403,3 +406,7 @@ nnoremap <leader>xd <cmd>TroubleToggle lsp_document_diagnostics<cr>
 nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
+
+" prettier stuff
+let g:prettier#quickfix_enabled = 0
+autocmd TextChanged,InsertLeave,BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.html Prettier

@@ -4,7 +4,6 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'chriskempson/base16-vim'
 Plug 'vim-test/vim-test'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-commentary'
@@ -25,7 +24,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
 Plug 'nvim-lua/completion-nvim'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'elixir-editors/vim-elixir'
-Plug 'joshdick/onedark.vim'
+Plug 'sickill/vim-monokai'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -47,7 +46,7 @@ set encoding=utf-8
 set laststatus=2
 set visualbell
 set termguicolors
-colorscheme onedark
+colorscheme monokai
 syntax enable
 filetype plugin indent on
 set tabstop=2
@@ -407,4 +406,4 @@ nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
 " prettier stuff
 let g:prettier#quickfix_enabled = 0
-autocmd TextChanged,InsertLeave,BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.html Prettier
+autocmd TextChanged,InsertLeave,BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.html execute ':Prettier'

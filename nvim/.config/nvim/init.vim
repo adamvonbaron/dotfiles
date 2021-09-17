@@ -24,7 +24,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
 Plug 'nvim-lua/completion-nvim'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'elixir-editors/vim-elixir'
-Plug 'sickill/vim-monokai'
+Plug 'tomasr/molokai'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -46,7 +46,8 @@ set encoding=utf-8
 set laststatus=2
 set visualbell
 set termguicolors
-colorscheme monokai
+let g:molokai_original = 1
+colorscheme molokai
 syntax enable
 filetype plugin indent on
 set tabstop=2

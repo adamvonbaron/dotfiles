@@ -21,7 +21,11 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
 " TSInstall yaml
 " TSInstall python
 
-Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'tomasr/molokai'
@@ -82,6 +86,28 @@ noremap <Leader>W :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Ba
 lua << EOF
 require("telescope").setup()
 local nvim_lsp = require('lspconfig')
+local cmp = require('cmp')
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` user.
+    end,
+  },
+  mapping = {
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+    -- For vsnip user.
+    { name = 'vsnip' },
+    { name = 'buffer' },
+  }
+})
 
 -- treesitter
 require'nvim-treesitter.configs'.setup {
@@ -156,7 +182,8 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
-    }
+    },
+    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   }
 end
 
@@ -376,18 +403,11 @@ require("trouble").setup()
 
 EOF
 
-" completion.nvim for autocomplete alongisde neovim's native lsp
-autocmd BufEnter * lua require'completion'.on_attach()
-" completion settings:
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
 " Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
+set completeopt=menu,menuone,noselect
 
 " Avoid showing message extra message when using completion
-set shortmess+=c
+" set shortmess+=c
 
 " format python files with black on save
 autocmd BufWritePre *.py execute ':Black'

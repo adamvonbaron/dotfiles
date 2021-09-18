@@ -95,6 +95,7 @@ require'nvim-treesitter.configs'.setup {
     "graphql",
     "yaml",
     "ruby",
+    "java"
   },
   highlight = {
     enable = true,

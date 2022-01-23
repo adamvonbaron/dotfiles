@@ -102,7 +102,7 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = {
-    { name = 'nvim_lsp' },
+    { name = 'nvim_diagnostic' },
     -- For vsnip user.
     { name = 'vsnip' },
     { name = 'buffer' },
@@ -347,7 +347,7 @@ ins_left {'progress', color = {fg = colors.fg, gui = 'bold'}}
 
 ins_left {
   'diagnostics',
-  sources = {'nvim_lsp'},
+  sources = {'nvim_diagnostic'},
   symbols = {error = ' ', warn = ' ', info = ' '},
   color_error = colors.red,
   color_warn = colors.yellow,

@@ -28,7 +28,7 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'elixir-editors/vim-elixir'
-Plug 'tomasr/molokai'
+Plug 'ackyshake/Spacegray.vim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -51,8 +51,7 @@ set encoding=utf-8
 set laststatus=2
 set visualbell
 set termguicolors
-let g:molokai_original = 1
-colorscheme molokai
+colorscheme spacegray
 syntax enable
 filetype plugin indent on
 set tabstop=2

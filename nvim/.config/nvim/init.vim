@@ -193,6 +193,13 @@ nvim_lsp["elixirls"].setup{
 
 require("trouble").setup()
 
+-- lualine
+require('lualine').setup{
+  options = {
+    theme = 'auto'
+  }
+}
+
 EOF
 
 " Set completeopt to have a better completion experience

@@ -10,8 +10,8 @@ set $right l
 
 # default programs
 set $term kitty
-set $browser google-chrome
-set $menu dmenu_path | dmenu -fn "Noto Mono" -m 0 -l 10 -nb "#1d1f21" -nf "#c5c8c6" -sf "#1d1f21" -sb "#b5bd68" | xargs swaymsg exec --
+set $browser firefox
+set $menu dmenu_path | dmenu -fn "mononoki" -m 0 -l 10 -nb "#1d1f21" -nf "#c5c8c6" -sf "#1d1f21" -sb "#b5bd68" | xargs swaymsg exec --
 
 include /etc/sway/config-vars.d/*
 
@@ -19,8 +19,8 @@ include /etc/sway/config-vars.d/*
 output * bg #1d1f21 solid_color
 
 # monitors
-output DP-1 resolution 3840x2160 position 2525,0 scale 1.25
-output DP-2 resolution 3840x2160 position 5597,0 scale 1.25
+# output DP-1 resolution 3840x2160 position 2525,0 scale 1.25
+# output DP-2 resolution 3840x2160 position 5597,0 scale 1.25
 
 # style
 default_border pixel 2
@@ -140,14 +140,13 @@ bar {
 }
 
 # define default workspces for stuff
-assign [class="Google-chrome"] workspace 2
+assign [class="Firefox"] workspace 2
 assign [class="Spotify"] workspace 4
 assign [title="Discord"] workspace 5
 assign [class="TelegramDesktop"] workspace 5
 
 # execute stuff at startup
-exec google-chrome
-exec /home/adam/bin/the_cord.sh
+exec firefox
 exec telegram-desktop
 exec spotify
 exec gammastep

@@ -145,10 +145,4 @@ assign [class="Spotify"] workspace 4
 assign [title="Discord"] workspace 5
 assign [class="TelegramDesktop"] workspace 5
 
-# execute stuff at startup
-exec firefox
-exec telegram-desktop
-exec spotify
-exec gammastep
-
 include /etc/sway/config.d/*

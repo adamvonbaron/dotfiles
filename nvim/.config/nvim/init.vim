@@ -37,6 +37,7 @@ Plug 'folke/trouble.nvim'
 Plug 'prettier/vim-prettier', {
       \  'do': 'yarn install',
       \  'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'html'] }
+Plug 'w0ng/vim-hybrid'
 
 call plug#end()
 
@@ -49,8 +50,9 @@ set number
 set encoding=utf-8
 set laststatus=2
 set visualbell
-set termguicolors
-colorscheme spacegray
+" set termguicolors
+let g:hybrid_custom_term_colors = 1
+colorscheme hybrid
 syntax enable
 filetype plugin indent on
 set tabstop=2

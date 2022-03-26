@@ -66,6 +66,7 @@ autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.rb lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.erb lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.yaml lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.{ex,exs} %!mix format -
 
 " autoload files in vim within vim (metaboss)
 au FocusGained,BufEnter * :checktime

@@ -28,7 +28,6 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'elixir-editors/vim-elixir'
-Plug 'ackyshake/Spacegray.vim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -95,18 +94,21 @@ cmp.setup({
     end,
   },
   mapping = {
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
+    ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<C-y>'] = cmp.config.disable,
+    ['<C-e>'] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
-  sources = {
-    { name = 'nvim_diagnostic' },
-    -- For vsnip user.
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
     { name = 'vsnip' },
-    { name = 'buffer' },
-  }
+    { { name = 'buffer' } }
+  })
 })
 
 -- treesitter
@@ -177,20 +179,24 @@ local servers = {
   "pyright",
   "vuels",
 }
+
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
     },
-    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    capabilities = capabilities
   }
 end
 
 -- have to tell nvim where elixirls is located, not stored in project by default
 -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#elixirls
 nvim_lsp["elixirls"].setup{
-  cmd = { vim.loop.os_homedir() .. "/bin/elixirls" }
+  cmd = { vim.loop.os_homedir() .. "/bin/elixirls" },
+  capabilities = capabilities
 }
 
 require("trouble").setup()

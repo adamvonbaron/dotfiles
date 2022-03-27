@@ -37,6 +37,7 @@ Plug 'prettier/vim-prettier', {
       \  'do': 'yarn install',
       \  'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'html'] }
 Plug 'w0ng/vim-hybrid'
+Plug 'mhinz/vim-mix-format'
 
 call plug#end()
 
@@ -66,7 +67,8 @@ autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.rb lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.erb lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.yaml lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.{ex,exs} %!mix format -
+" autocmd BufWritePre *.{ex,exs} %!mix format -
+let g:mix_format_on_save = 1
 
 " autoload files in vim within vim (metaboss)
 au FocusGained,BufEnter * :checktime

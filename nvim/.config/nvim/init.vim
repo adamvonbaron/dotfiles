@@ -198,7 +198,7 @@ end
 -- have to tell nvim where elixirls is located, not stored in project by default
 -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#elixirls
 nvim_lsp["elixirls"].setup{
-  cmd = { vim.loop.os_homedir() .. "/bin/elixirls" },
+  cmd = { "/opt/homebrew/bin/elixir-ls" },
   capabilities = capabilities
 }
 

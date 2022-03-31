@@ -171,7 +171,6 @@ end
 local servers = {
   "yamlls",
   "cssls",
-  "tsserver",
   "dockerls",
   "graphql",
   "html",

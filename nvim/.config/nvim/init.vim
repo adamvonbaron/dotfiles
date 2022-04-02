@@ -20,6 +20,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
 " TSInstall typescript
 " TSInstall yaml
 " TSInstall python
+" TSInstall rust
 
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -33,11 +34,14 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'folke/trouble.nvim'
-Plug 'prettier/vim-prettier', {
-      \  'do': 'yarn install',
-      \  'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'html'] }
 Plug 'w0ng/vim-hybrid'
+Plug 'lifepillar/vim-solarized8'
 Plug 'mhinz/vim-mix-format'
+" install prettier globally and use with null-ls
+" yarn global add prettier
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -50,9 +54,9 @@ set number
 set encoding=utf-8
 set laststatus=2
 set visualbell
-" set termguicolors
-let g:hybrid_custom_term_colors = 1
-colorscheme hybrid
+set termguicolors
+" let g:hybrid_custom_term_colors = 1
+colorscheme solarized8
 syntax enable
 filetype plugin indent on
 set tabstop=2
@@ -176,9 +180,6 @@ local servers = {
   "html",
   "jsonls",
   "solargraph",
-  -- need to install tsserver and typescript-language-server globally
-  -- yarn global add tsserver typescript-language-server
-  "tsserver",
   "sqls",
   "pyright",
   "vuels",
@@ -203,12 +204,47 @@ nvim_lsp["elixirls"].setup{
   capabilities = capabilities
 }
 
+local buf_map = function(bufnr, mode, lhs, rhs, opts)
+    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
+        silent = true,
+    })
+end
+
+-- need to install tsserver and typescript-language-server globally
+-- yarn global add tsserver typescript-language-server
+nvim_lsp["tsserver"].setup{
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+    local ts_utils = require("nvim-lsp-ts-utils")
+    ts_utils.setup({})
+    ts_utils.setup_client(client)
+    buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
+    buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
+    buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
+    on_attach(client, bufnr)
+  end,
+}
+
+
+-- use null_ls to run eslint and prettier in memory speedy boi
+local null_ls = require("null-ls")
+null_ls.setup({
+    sources = {
+        null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.code_actions.eslint,
+        null_ls.builtins.formatting.prettier
+    },
+    on_attach = on_attach
+})
+
+-- use trouble to show LSP errors in separate pane
 require("trouble").setup()
 
 -- lualine
 require('lualine').setup{
   options = {
-    theme = 'auto'
+    theme = 'solarized_light'
   }
 }
 
@@ -238,6 +274,3 @@ nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
-" prettier stuff
-let g:prettier#quickfix_enabled = 0
-autocmd TextChanged,InsertLeave,BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.html execute ':Prettier'

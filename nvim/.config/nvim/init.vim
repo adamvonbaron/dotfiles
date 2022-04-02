@@ -176,6 +176,8 @@ local servers = {
   "html",
   "jsonls",
   "solargraph",
+  -- need to install tsserver and typescript-language-server globally
+  -- yarn global add tsserver typescript-language-server
   "tsserver",
   "sqls",
   "pyright",
@@ -239,4 +241,3 @@ nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 " prettier stuff
 let g:prettier#quickfix_enabled = 0
 autocmd TextChanged,InsertLeave,BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.html execute ':Prettier'
-

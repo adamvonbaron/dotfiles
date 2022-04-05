@@ -42,6 +42,8 @@ Plug 'mhinz/vim-mix-format'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'rust-lang/rust.vim'
+Plug 'elubow/cql-vim'
+Plug 'rescript-lang/vim-rescript'
 
 call plug#end()
 
@@ -170,8 +172,6 @@ local on_attach = function(client, bufnr)
 
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
 local servers = {
   "yamlls",
   "cssls",
@@ -182,7 +182,6 @@ local servers = {
   "solargraph",
   "sqls",
   "pyright",
-  "vuels",
 }
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -224,6 +223,10 @@ nvim_lsp["tsserver"].setup{
     buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
     on_attach(client, bufnr)
   end,
+}
+
+nvim_lsp["rescriptls"].setup{
+  cmd = { "node", "/Users/adam/.local/share/nvim/plugged/vim-rescript/server/out/server.js", "--stdio" }
 }
 
 

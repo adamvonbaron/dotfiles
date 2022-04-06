@@ -177,6 +177,8 @@ local on_attach = function(client, bufnr)
 
 end
 
+-- global servers to install
+-- yaml-language-server
 local servers = {
   "yamlls",
   "cssls",

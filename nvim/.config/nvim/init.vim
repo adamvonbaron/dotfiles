@@ -44,6 +44,7 @@ Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'rust-lang/rust.vim'
 Plug 'elubow/cql-vim'
 Plug 'rescript-lang/vim-rescript'
+Plug 'neovimhaskell/haskell-vim'
 
 call plug#end()
 
@@ -132,7 +133,11 @@ require'nvim-treesitter.configs'.setup {
     "graphql",
     "yaml",
     "ruby",
-    "java"
+    "java",
+    "elixir",
+    "eex",
+    "haskell",
+    "http"
   },
   highlight = {
     enable = true,
@@ -182,6 +187,7 @@ local servers = {
   "solargraph",
   "sqls",
   "pyright",
+  "hls"
 }
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())

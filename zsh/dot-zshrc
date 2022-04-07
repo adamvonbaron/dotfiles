@@ -1,4 +1,4 @@
-export PATH="/Users/adam/.asdf/shims:/Users/adam/bin:/Users/adam/.local/bin:/Users/adam/.yarn/bin:/opt/homebrew/opt/asdf/libexec/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Users/adam/.asdf/shims:/Users/adam/bin:/Users/adam/.local/bin:/Users/adam/.yarn/bin:/Users/adam/.ghcup/bin:/opt/homebrew/opt/asdf/libexec/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export ZSH="/Users/adam/.oh-my-zsh"
 ZSH_THEME="minimal"
 # CASE_SENSITIVE="true"

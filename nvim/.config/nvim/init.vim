@@ -45,6 +45,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'elubow/cql-vim'
 Plug 'rescript-lang/vim-rescript'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'jordwalke/vim-reasonml'
 
 call plug#end()
 

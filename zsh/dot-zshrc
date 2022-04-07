@@ -5,3 +5,6 @@ ZSH_THEME="minimal"
 ENABLE_CORRECTION="true"
 plugins=(git asdf ag aws bundler celery colored-man-pages colorize docker-compose docker-machine docker dotenv gem mix npm pip rails rake redis-cli ruby tmux yarn)
 source $ZSH/oh-my-zsh.sh
+
+# opam configuration
+[[ ! -r /Users/adam/.opam/opam-init/init.zsh ]] || source /Users/adam/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

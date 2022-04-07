@@ -137,7 +137,8 @@ require'nvim-treesitter.configs'.setup {
     "elixir",
     "eex",
     "haskell",
-    "http"
+    "http",
+    "ocaml"
   },
   highlight = {
     enable = true,
@@ -179,6 +180,7 @@ end
 
 -- global servers to install
 -- yaml-language-server
+-- ocaml-lsp, not ocaml-language-server
 local servers = {
   "yamlls",
   "cssls",
@@ -189,7 +191,8 @@ local servers = {
   "solargraph",
   "sqls",
   "pyright",
-  "hls"
+  "hls",
+  "ocamllsp"
 }
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())

@@ -1,9 +1,14 @@
-export PATH="/Users/adam/.asdf/shims:/Users/adam/bin:/Users/adam/.local/bin:/Users/adam/.yarn/bin:/Users/adam/.ghcup/bin:/opt/homebrew/opt/asdf/libexec/bin:/opt/homebrew/opt/llvm/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Users/adam/.asdf/shims:/Users/adam/bin:/Users/adam/.local/bin:/Users/adam/.yarn/bin:/Users/adam/.ghcup/bin:/Users/adam/.pyenv/bin:/opt/homebrew/opt/asdf/libexec/bin:/opt/homebrew/opt/llvm/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export ZSH="/Users/adam/.oh-my-zsh"
 ZSH_THEME="minimal"
 # CASE_SENSITIVE="true"
 ENABLE_CORRECTION="true"
-plugins=(git asdf ag aws bundler celery colored-man-pages colorize docker-compose docker-machine docker dotenv gem mix npm pip rails rake redis-cli ruby tmux yarn)
+
+# pyenv
+PYENV_ROOT="$HOME/.pyenv"
+eval "$(pyenv init --path)"
+
+plugins=(git asdf ag aws bundler celery colored-man-pages colorize docker-compose docker-machine docker dotenv gem mix npm pip pyenv python rails rake redis-cli ruby tmux yarn)
 source $ZSH/oh-my-zsh.sh
 
 # opam configuration

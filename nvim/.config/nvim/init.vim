@@ -182,6 +182,8 @@ end
 -- global servers to install
 -- yaml-language-server
 -- ocaml-lsp, not ocaml-language-server
+-- pyright
+-- solargraph
 local servers = {
   "yamlls",
   "cssls",

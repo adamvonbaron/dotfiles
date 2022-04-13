@@ -21,6 +21,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
 " TSInstall yaml
 " TSInstall python
 " TSInstall rust
+" TSInstall html
+" TSInstall go
 
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -46,6 +48,7 @@ Plug 'elubow/cql-vim'
 Plug 'rescript-lang/vim-rescript'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'jordwalke/vim-reasonml'
+Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -96,6 +99,7 @@ noremap <Leader>W :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Ba
 lua << EOF
 require("telescope").setup()
 local nvim_lsp = require('lspconfig')
+local util = require('lspconfig/util')
 local cmp = require('cmp')
 
 cmp.setup({
@@ -139,7 +143,8 @@ require'nvim-treesitter.configs'.setup {
     "eex",
     "haskell",
     "http",
-    "ocaml"
+    "ocaml",
+    "go"
   },
   highlight = {
     enable = true,
@@ -209,6 +214,20 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities
   }
 end
+
+nvim_lsp["gopls"].setup{
+  cmd = {"gopls", "serve"},
+  filetypes = {"go", "gomod"},
+  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+    },
+  },
+}
 
 -- have to tell nvim where elixirls is located, not stored in project by default
 -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#elixirls

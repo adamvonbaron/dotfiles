@@ -63,7 +63,8 @@ set laststatus=2
 set visualbell
 set termguicolors
 " let g:hybrid_custom_term_colors = 1
-colorscheme solarized8
+set background=dark
+colorscheme solarized8_flat
 syntax enable
 filetype plugin indent on
 set tabstop=2
@@ -280,7 +281,7 @@ require("trouble").setup()
 -- lualine
 require('lualine').setup{
   options = {
-    theme = 'solarized_light'
+    theme = 'solarized_dark'
   }
 }
 

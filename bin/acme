@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+fontsrv &
+acme -f /mnt/font/FiraCodeNerdFontComplete-Regular/12a/font

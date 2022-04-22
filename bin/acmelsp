@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+acme-lsp -server '([/\\]go\.mod)|([/\\]go\.sum)|(\.go)$:gopls serve' -workspaces /Users/adam/Source/*

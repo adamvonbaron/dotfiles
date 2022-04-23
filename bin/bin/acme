@@ -1,4 +1,4 @@
 #!/usr/bin/env zsh
 
 # fontsrv &
-acme -f /mnt/font/FiraCodeNerdFontComplete-Regular/12a/font
+edwood -f /mnt/font/FiraCodeNerdFontComplete-Regular/12a/font

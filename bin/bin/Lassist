@@ -1,2 +1,2 @@
-#!/bin/rc
+#!/usr/local/plan9/bin/rc
 exec L assist $*

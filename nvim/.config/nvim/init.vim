@@ -37,7 +37,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'w0ng/vim-hybrid'
-Plug 'lifepillar/vim-solarized8'
+Plug 'tomasr/molokai'
 Plug 'mhinz/vim-mix-format'
 " install prettier globally and use with null-ls
 " yarn global add prettier
@@ -62,8 +62,8 @@ set encoding=utf-8
 set laststatus=2
 set visualbell
 set termguicolors
-" let g:hybrid_custom_term_colors = 1
-colorscheme solarized8_flat
+colorscheme molokai
+let g:rehash256 = 1
 syntax enable
 filetype plugin indent on
 set tabstop=2

@@ -37,7 +37,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'w0ng/vim-hybrid'
-Plug 'tomasr/molokai'
+Plug 'chriskempson/base16-vim'
 Plug 'mhinz/vim-mix-format'
 " install prettier globally and use with null-ls
 " yarn global add prettier
@@ -62,7 +62,8 @@ set encoding=utf-8
 set laststatus=2
 set visualbell
 set termguicolors
-colorscheme molokai
+let base16colorspace=256
+colorscheme base16-tomorrow-night
 let g:rehash256 = 1
 syntax enable
 filetype plugin indent on

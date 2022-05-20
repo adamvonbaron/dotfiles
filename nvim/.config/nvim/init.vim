@@ -37,7 +37,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'w0ng/vim-hybrid'
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
 Plug 'mhinz/vim-mix-format'
 " install prettier globally and use with null-ls
 " yarn global add prettier
@@ -49,6 +49,7 @@ Plug 'rescript-lang/vim-rescript'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'jordwalke/vim-reasonml'
 Plug 'fatih/vim-go'
+Plug 'RRethy/nvim-base16'
 
 call plug#end()
 
@@ -280,7 +281,9 @@ require("trouble").setup()
 -- lualine
 require('lualine').setup{
   options = {
-    theme = 'auto'
+    theme = 'auto',
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' }
   }
 }
 

@@ -10,5 +10,4 @@ fn cd {
 tabstop=4
 
 plumber
-acmego -f &
 exec acme -a $* &

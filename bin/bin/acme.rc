@@ -1,0 +1,15 @@
+#!/usr/local/plan9/bin/rc
+
+fn cd {
+  builtin cd $1 && awd $sysname
+}
+
+tabstop=4
+
+plumber
+acmego -f &
+
+TERM=dumb
+SHELL=rc
+
+exec acme -a $*

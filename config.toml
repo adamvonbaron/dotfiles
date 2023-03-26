@@ -1,0 +1,31 @@
+HideDiagnostics = false
+FormatOnPut = true
+RPCTrace = true
+CodeActionsOnPut = ["source.organizeImports"]
+WorkspaceDirectories = [
+  "/Users/adam/Source/*"
+]
+
+[Servers]
+[Servers.gopls]
+  Command = ["gopls", "serve", "-rpc.trace"]
+  StderrFile = "gopls.stderr.log"
+  LogFile = "gopls.log"
+
+  [Servers.gopls.Options]
+    hoverKind = "FullDocumentation"
+
+ [[FilenameHandlers]]
+   Pattern = "[/\\\\]go\\.mod$"
+   LanguageID = "go.mod"
+   ServerKey = "gopls"
+
+ [[FilenameHandlers]]
+   Pattern = "[/\\\\]go\\.sum$"
+   LanguageID = "go.sum"
+   ServerKey = "gopls"
+
+ [[FilenameHandlers]]
+   Pattern = "\\.go$"
+   LanguageID = "go"
+   ServerKey = "gopls"

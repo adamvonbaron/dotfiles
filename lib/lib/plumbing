@@ -1,10 +1,10 @@
 editor = acme
 
-# gh repo
+# gh pr
 type is text
-data matches 'gh/([a-zA-z0-9]+)/([a-zA-Z0-9_\-]+)'
+data matches `gh/([a-zA-z0-9]+)/([a-zA-Z0-9_\-]+)/pull/([0-9]+)`
 plumb to web
-plumb start web https://github.com/$1/$2
+plumb start web https://github.com/$1/$2/pull/$3
 
 # gh issue
 type is text
@@ -12,10 +12,10 @@ data matches `gh/([a-zA-z0-9]+)/([a-zA-Z0-9_\-]+)#([0-9]+)`
 plumb to web
 plumb start web https://github.com/$1/$2/issues/$3
 
-# gh pr
+# gh repo
 type is text
-data matches `gh/([a-zA-z0-9]+)/([a-zA-Z0-9_\-]+)/pull/([0-9]+)`
+data matches 'gh/([a-zA-z0-9]+)/([a-zA-Z0-9_\-]+)'
 plumb to web
-plumb start web https://github.com/$1/$2/pull/$3
+plumb start web https://github.com/$1/$2
 
 include basic

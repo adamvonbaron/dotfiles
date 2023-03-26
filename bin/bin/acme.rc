@@ -2,6 +2,8 @@
 
 TERM=dumb
 SHELL=rc
+BROWSER=safari
+PAGER=nobs
 
 fn cd {
   builtin cd $1 && awd $sysname

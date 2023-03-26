@@ -1,0 +1,9 @@
+editor = acme
+
+# gh repo
+type is text
+data matches 'github/([a-zA-z0-9]+)/([a-zA-Z0-9_\-]+)'
+plumb to web
+plumb start web https://github.com/$1/$2
+
+include basic

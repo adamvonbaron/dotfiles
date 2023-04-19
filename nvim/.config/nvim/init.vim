@@ -37,7 +37,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'w0ng/vim-hybrid'
-Plug 'chriskempson/base16-vim'
 Plug 'mhinz/vim-mix-format'
 " install prettier globally and use with null-ls
 " yarn global add prettier
@@ -47,9 +46,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'elubow/cql-vim'
 Plug 'rescript-lang/vim-rescript'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'jordwalke/vim-reasonml'
 Plug 'fatih/vim-go'
-" Plug 'RRethy/nvim-base16'
 
 call plug#end()
 
@@ -62,10 +59,8 @@ set number
 set encoding=utf-8
 set laststatus=2
 set visualbell
-set termguicolors
-let base16colorspace=256
-colorscheme base16-tomorrow-night
-let g:rehash256 = 1
+" set termguicolors
+" let g:rehash256 = 1
 syntax enable
 filetype plugin indent on
 set tabstop=2
@@ -198,13 +193,13 @@ local servers = {
   "html",
   "jsonls",
   "solargraph",
-  "sqls",
+  "sqlls",
   "pyright",
   "hls",
   "ocamllsp"
 }
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {

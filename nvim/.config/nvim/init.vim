@@ -36,7 +36,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'folke/trouble.nvim'
-Plug 'w0ng/vim-hybrid'
 Plug 'mhinz/vim-mix-format'
 " install prettier globally and use with null-ls
 " yarn global add prettier
@@ -47,6 +46,7 @@ Plug 'elubow/cql-vim'
 Plug 'rescript-lang/vim-rescript'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'fatih/vim-go'
+Plug 'zaki/zazen'
 
 call plug#end()
 
@@ -54,13 +54,13 @@ set nocompatible
 set nowrap
 set nobackup
 set noswapfile
-set cursorline
+set nocursorline
 set number
 set encoding=utf-8
 set laststatus=2
 set visualbell
-" set termguicolors
-" let g:rehash256 = 1
+set background=dark
+colorscheme zazen
 syntax enable
 filetype plugin indent on
 set tabstop=2

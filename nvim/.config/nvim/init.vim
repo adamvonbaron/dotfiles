@@ -46,7 +46,6 @@ Plug 'elubow/cql-vim'
 Plug 'rescript-lang/vim-rescript'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'fatih/vim-go'
-Plug 'zaki/zazen'
 
 call plug#end()
 
@@ -60,7 +59,7 @@ set encoding=utf-8
 set laststatus=2
 set visualbell
 set background=dark
-colorscheme zazen
+colorscheme noclown
 syntax enable
 filetype plugin indent on
 set tabstop=2
@@ -282,7 +281,6 @@ require('lualine').setup{
     section_separators = { left = '', right = '' }
   }
 }
-
 EOF
 
 " Set completeopt to have a better completion experience
@@ -299,7 +297,6 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
 
 " trouble stuff
 nnoremap <leader>xx <cmd>TroubleToggle<cr>

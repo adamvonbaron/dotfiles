@@ -67,6 +67,7 @@ set expandtab
 set shiftwidth=2
 set autoindent
 set smartindent
+set cursorline
 
 " autoformat
 autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 100)

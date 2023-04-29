@@ -9,21 +9,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-commentary'
 Plug 'neovim/nvim-lspconfig'
 Plug 'tpope/vim-eunuch'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
-" TSInstall css
-" TSInstall elixir
-" TSInstall graphql
-" TSInstall javascript
-" TSInstall json
-" TSInstall ruby
-" TSInstall scss
-" TSInstall typescript
-" TSInstall yaml
-" TSInstall python
-" TSInstall rust
-" TSInstall html
-" TSInstall go
-
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -33,9 +18,7 @@ Plug 'psf/black', { 'branch': 'stable' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'
-Plug 'folke/trouble.nvim'
 Plug 'mhinz/vim-mix-format'
 " install prettier globally and use with null-ls
 " yarn global add prettier
@@ -43,8 +26,6 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'rust-lang/rust.vim'
 Plug 'elubow/cql-vim'
-Plug 'rescript-lang/vim-rescript'
-Plug 'neovimhaskell/haskell-vim'
 Plug 'fatih/vim-go'
 
 call plug#end()
@@ -121,31 +102,6 @@ cmp.setup({
     { { name = 'buffer' } }
   })
 })
-
--- treesitter
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = {
-    "typescript",
-    "javascript",
-    "json",
-    "python",
-    "html",
-    "scss",
-    "graphql",
-    "yaml",
-    "ruby",
-    "java",
-    "elixir",
-    "eex",
-    "haskell",
-    "http",
-    "ocaml",
-    "go"
-  },
-  highlight = {
-    enable = true,
-  }
-}
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -254,11 +210,6 @@ nvim_lsp["tsserver"].setup{
   end,
 }
 
-nvim_lsp["rescriptls"].setup{
-  cmd = { "node", "/Users/adam/.local/share/nvim/plugged/vim-rescript/server/out/server.js", "--stdio" }
-}
-
-
 -- use null_ls to run eslint and prettier in memory speedy boi
 local null_ls = require("null-ls")
 null_ls.setup({
@@ -269,9 +220,6 @@ null_ls.setup({
     },
     on_attach = on_attach
 })
-
--- use trouble to show LSP errors in separate pane
-require("trouble").setup()
 
 -- lualine
 require('lualine').setup{
@@ -298,12 +246,4 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-" trouble stuff
-nnoremap <leader>xx <cmd>TroubleToggle<cr>
-nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
-nnoremap <leader>xd <cmd>TroubleToggle lsp_document_diagnostics<cr>
-nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
-nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
-nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 

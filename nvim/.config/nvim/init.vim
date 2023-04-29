@@ -35,20 +35,26 @@ set nowrap
 set nobackup
 set noswapfile
 set nocursorline
-set number
+" set number
 set encoding=utf-8
 set laststatus=2
 set visualbell
-set background=dark
-colorscheme noclown
+" set background=dark
+" colorscheme noclown
+colorscheme default
 syntax enable
+set bg=light
 filetype plugin indent on
 set tabstop=2
 set expandtab
 set shiftwidth=2
 set autoindent
 set smartindent
-set cursorline
+" set cursorline
+highlight clear SignColumn
+highlight Statement ctermfg=63
+highlight Comment ctermfg=245
+highlight Special ctermfg=yellow
 
 " autoformat
 autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 100)
@@ -224,7 +230,8 @@ null_ls.setup({
 -- lualine
 require('lualine').setup{
   options = {
-    theme = 'auto',
+  --  theme = 'auto',
+    theme = '16color',
     icons_enabled = false,
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' }

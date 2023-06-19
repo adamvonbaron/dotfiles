@@ -27,6 +27,8 @@ Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'rust-lang/rust.vim'
 Plug 'elubow/cql-vim'
 Plug 'fatih/vim-go'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'folke/trouble.nvim'
 
 call plug#end()
 
@@ -35,26 +37,27 @@ set nowrap
 set nobackup
 set noswapfile
 set nocursorline
-" set number
+set number
 set encoding=utf-8
 set laststatus=2
 set visualbell
-" set background=dark
-" colorscheme noclown
-colorscheme default
+colorscheme Civic
+set background=light
+" set termguicolors
+set t_Co=256
 syntax enable
-set bg=light
+" set bg=light
 filetype plugin indent on
 set tabstop=2
 set expandtab
 set shiftwidth=2
 set autoindent
 set smartindent
-" set cursorline
-highlight clear SignColumn
-highlight Statement ctermfg=63
-highlight Comment ctermfg=245
-highlight Special ctermfg=yellow
+set cursorline
+" highlight clear SignColumn
+" highlight Statement ctermfg=63
+" highlight Comment ctermfg=245
+" highlight Special ctermfg=yellow
 
 " autoformat
 autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 100)
@@ -230,12 +233,110 @@ null_ls.setup({
 -- lualine
 require('lualine').setup{
   options = {
-  --  theme = 'auto',
-    theme = '16color',
+    theme = 'auto',
     icons_enabled = false,
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' }
   }
+}
+
+-- trouble
+require('trouble').setup{
+ icons = false,
+    fold_open = "v", -- icon used for open folds
+    fold_closed = ">", -- icon used for closed folds
+    indent_lines = false, -- add an indent guide below the fold icons
+    signs = {
+        -- icons / text used for a diagnostic
+        error = "error",
+        warning = "warn",
+        hint = "hint",
+        information = "info"
+    },
+    use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
+}
+
+vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
+  {silent = true, noremap = true}
+)
+
+-- treesitter
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+    "c",
+    "css",
+    "diff",
+    "dockerfile",
+    "eex",
+    "elixir",
+    "git_config",
+    "git_rebase",
+    "gitattributes",
+    "gitignore",
+    "go",
+    "gomod",
+    "gosum",
+    "graphql",
+    "heex",
+    "html",
+    "htmldjango",
+    "http",
+    "ini",
+    "java",
+    "javascript",
+    "jq",
+    "jsdoc",
+    "json",
+    "json5",
+    "lua",
+    "luadoc",
+    "m68k",
+    "markdown",
+    "objc",
+    "prisma",
+    "proto",
+    "python",
+    "regex",
+    "ruby",
+    "rust",
+    "scss",
+    "sql",
+    "swift",
+    "terraform",
+    "toml",
+    "tsx",
+    "typescript",
+    "vim",
+    "vimdoc",
+    "yaml"
+  },
+  sync_install = false,
+  auto_install = true,
+
+  highlight = {
+    enable = true,
+
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
 }
 EOF
 

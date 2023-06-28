@@ -217,9 +217,9 @@ nvim_lsp["tsserver"].setup{
     buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
     on_attach(client, bufnr)
   end,
-  root_dir = nvim_lsp.util.root_pattern("package.json"),
-  single_file_support = false
 }
+
+nvim_lsp["rust_analyzer"].setup{}
 
 -- use null_ls to run eslint and prettier in memory speedy boi
 local null_ls = require("null-ls")
@@ -237,7 +237,6 @@ vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }
 nvim_lsp["denols"].setup{
-  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
 }
 
 -- lualine

@@ -182,7 +182,8 @@ for _, lsp in ipairs(servers) do
 end
 
 nvim_lsp["volar"].setup{
-  filetypes = {'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'json'}
+  on_attach = on_attach,
+  filetypes = {'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'json'},
 }
 
 nvim_lsp["gopls"].setup{

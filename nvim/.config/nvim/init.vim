@@ -29,6 +29,10 @@ Plug 'elubow/cql-vim'
 Plug 'fatih/vim-go'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'folke/trouble.nvim'
+Plug 'heavenshell/vim-jsdoc', {
+    \ 'for': ['javascript', 'javascript.jsx', 'typescript'],
+    \ 'do': 'make install'
+    \}
 
 call plug#end()
 

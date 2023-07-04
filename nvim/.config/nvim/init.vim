@@ -20,13 +20,10 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'mhinz/vim-mix-format'
-" install prettier globally and use with null-ls
-" yarn global add prettier
 Plug 'prettier/vim-prettier', {
       \ 'for': ['javascript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'html'],
       \ 'do': 'npm install --frozen-lockfile --production'
       \ }
-Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'rust-lang/rust.vim'
 Plug 'elubow/cql-vim'
@@ -70,6 +67,8 @@ set cursorline
 " autoformat
 autocmd BufWritePre *.ts Prettier
 autocmd BufWritePre *.js Prettier
+autocmd BufWritePre *.html Prettier
+autocmd BufWritePre *.vue Prettier
 autocmd BufWritePre *.{ex,exs} %!mix format -
 let g:mix_format_on_save = 1
 
@@ -167,7 +166,8 @@ local servers = {
   "pyright",
   "hls",
   "ocamllsp",
-  "ccls"
+  "ccls",
+  "volar"
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -210,7 +210,7 @@ local buf_map = function(bufnr, mode, lhs, rhs, opts)
 end
 
 -- need to install tsserver and typescript-language-server globally
--- yarn global add tsserver typescript-language-server
+-- npm install -g tsserver typescript-language-server
 nvim_lsp["tsserver"].setup{
   on_attach = function(client, bufnr)
     client.resolved_capabilities.document_formatting = false
@@ -223,26 +223,18 @@ nvim_lsp["tsserver"].setup{
     buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
     on_attach(client, bufnr)
   end,
+  root_dir = nvim_lsp.util.root_pattern("package.json"),
 }
 
 nvim_lsp["rust_analyzer"].setup{}
-
--- use null_ls to run eslint and prettier in memory speedy boi
-local null_ls = require("null-ls")
-null_ls.setup({
-    sources = {
-        null_ls.builtins.diagnostics.eslint,
-        null_ls.builtins.code_actions.eslint,
-        null_ls.builtins.formatting.prettier
-    },
-    on_attach = on_attach
-})
 
 -- denols
 vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }
 nvim_lsp["denols"].setup{
+  on_attach = on_attach,
+  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
 }
 
 -- lualine

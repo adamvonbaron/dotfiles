@@ -22,6 +22,10 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'mhinz/vim-mix-format'
 " install prettier globally and use with null-ls
 " yarn global add prettier
+Plug 'prettier/vim-prettier', {
+      \ 'for': ['javascript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'html'],
+      \ 'do': 'npm install --frozen-lockfile --production'
+      \ }
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'rust-lang/rust.vim'
@@ -64,12 +68,9 @@ set cursorline
 " highlight Special ctermfg=yellow
 
 " autoformat
-autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.rb lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.erb lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.yaml lua vim.lsp.buf.formatting_sync(nil, 100)
-" autocmd BufWritePre *.{ex,exs} %!mix format -
+autocmd BufWritePre *.ts Prettier
+autocmd BufWritePre *.js Prettier
+autocmd BufWritePre *.{ex,exs} %!mix format -
 let g:mix_format_on_save = 1
 
 " autoload files in vim within vim (metaboss)

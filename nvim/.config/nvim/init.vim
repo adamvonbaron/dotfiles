@@ -167,7 +167,6 @@ local servers = {
   "hls",
   "ocamllsp",
   "ccls",
-  "volar"
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -181,6 +180,10 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities
   }
 end
+
+nvim_lsp["volar"].setup{
+  filetypes = {'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'json'}
+}
 
 nvim_lsp["gopls"].setup{
   cmd = {"gopls", "serve"},

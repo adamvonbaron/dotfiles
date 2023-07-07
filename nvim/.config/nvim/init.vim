@@ -3,7 +3,6 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 Plug 'vim-test/vim-test'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-commentary'
@@ -34,6 +33,8 @@ Plug 'heavenshell/vim-jsdoc', {
     \ 'for': ['javascript', 'javascript.jsx', 'typescript'],
     \ 'do': 'make install'
     \}
+Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 
 call plug#end()
 
@@ -285,6 +286,31 @@ vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
 vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
   {silent = true, noremap = true}
 )
+
+-- lsp_lines
+require("lsp_lines").setup()
+vim.diagnostic.config({ virtual_text = false })
+
+-- gitsigns
+require("gitsigns").setup({
+  signs = {
+    add          = { text = '▐' },
+		change       = { text = '▐' },
+		delete       = { text = '▐' },
+		topdelete    = { text = '▐' },
+		changedelete = { text = '▐' },
+		untracked    = { text = '▐' },
+  },
+  signcolumn     = true,  -- Toggle with `:Gitsigns toggle_signs`
+	linehl         = false, -- Toggle with `:Gitsigns toggle_linehl`
+	numhl          = false, -- Toggle with `:Gitsigns toggle_nunhl`
+	word_diff      = false, -- Toggle with `:Gitsigns toggle_word_diff`
+	sign_priority  = 9,
+	watch_gitdir   = {
+	  interval     = 1000,
+	},
+	attach_to_untracked = false,
+})
 
 -- treesitter
 require'nvim-treesitter.configs'.setup {

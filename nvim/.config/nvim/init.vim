@@ -35,6 +35,7 @@ Plug 'heavenshell/vim-jsdoc', {
     \}
 Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -47,12 +48,11 @@ set number
 set encoding=utf-8
 set laststatus=2
 set visualbell
-colorscheme Civic
-set background=light
 " set termguicolors
+set background=dark
+colorscheme solarized
 set t_Co=256
 syntax enable
-" set bg=light
 filetype plugin indent on
 set tabstop=2
 set expandtab
@@ -113,7 +113,8 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = 'vsnip' },
-    { { name = 'buffer' } }
+    { name = 'buffer' },
+    { name = 'nvim_lsp_signature_help' }
   })
 })
 
@@ -150,6 +151,40 @@ local on_attach = function(client, bufnr)
 
 end
 
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  callback = function(ev)
+    -- Enable completion triggered by <c-x><c-o>
+    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+    -- Buffer local mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local opts = { buffer = ev.buf }
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set('n', '<space>wl', function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, opts)
+    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '<space>f', function()
+      vim.lsp.buf.format { async = true }
+    end, opts)
+  end,
+})
+
 -- global servers to install
 -- yaml-language-server
 -- ocaml-lsp, not ocaml-language-server
@@ -174,7 +209,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
-    on_attach = on_attach,
+    -- on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
     },
@@ -183,7 +218,7 @@ for _, lsp in ipairs(servers) do
 end
 
 nvim_lsp["volar"].setup{
-  on_attach = on_attach,
+  -- on_attach = on_attach,
   filetypes = {'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'json'},
 }
 
@@ -217,7 +252,7 @@ end
 -- need to install tsserver and typescript-language-server globally
 -- npm install -g tsserver typescript-language-server
 nvim_lsp["tsserver"].setup{
-  on_attach = function(client, bufnr)
+  --[[ on_attach = function(client, bufnr)
     client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.document_range_formatting = false
     local ts_utils = require("nvim-lsp-ts-utils")
@@ -227,7 +262,7 @@ nvim_lsp["tsserver"].setup{
     buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
     buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
     on_attach(client, bufnr)
-  end,
+  end, ]]--
   root_dir = nvim_lsp.util.root_pattern("package.json"),
 }
 
@@ -245,7 +280,7 @@ nvim_lsp["denols"].setup{
 -- lualine
 require('lualine').setup{
   options = {
-    theme = 'auto',
+    theme = 'solarized_dark',
     icons_enabled = false,
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' }

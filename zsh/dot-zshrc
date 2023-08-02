@@ -6,6 +6,7 @@ export ZSH="/Users/adam/.oh-my-zsh"
 ZSH_THEME="minimal"
 # CASE_SENSITIVE="true"
 ENABLE_CORRECTION="true"
+EDITOR="subl -w"
 
 # pyenv
 PYENV_ROOT="$HOME/.pyenv"

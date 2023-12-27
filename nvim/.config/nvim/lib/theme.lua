@@ -3,4 +3,4 @@ vim.opt.syntax = "enable"
 vim.opt.cursorline = true
 -- vim.opt.termguicolors = true
 vim.opt.synmaxcol = 512
-vim.cmd("colorscheme Civic")
+vim.cmd("colorscheme jellybeans")

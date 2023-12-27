@@ -34,6 +34,7 @@ return {
                 "luadoc",
                 "m68k",
                 "markdown",
+                "markdown_inline",
                 "objc",
                 "prisma",
                 "proto",

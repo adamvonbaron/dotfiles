@@ -49,6 +49,7 @@ lazy.setup({
     require("plugins.lspsaga-nvim"),
     require("plugins.lspkind-nvim"),
     require("plugins.vim-graphql"),
+    require("plugins.vim-prisma"),
     require("plugins.symbols-outline-nvim"),
     require("plugins.lush-nvim"),
     require("plugins.jellybeans-vim")

@@ -3,6 +3,10 @@ return {
     config = function()
         local lualine = require('lualine')
 
-        lualine.setup({})
+        lualine.setup({
+          options = {
+            theme = "jellybeans"
+          }
+        })
     end
 }

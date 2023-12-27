@@ -5,7 +5,10 @@ return {
 
         lualine.setup({
           options = {
-            theme = "jellybeans"
+            theme = "jellybeans",
+            icons_enabled = false,
+            component_separators = '|',
+            section_separators = '',
           }
         })
     end

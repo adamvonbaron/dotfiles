@@ -46,6 +46,8 @@ lazy.setup({
         require('plugins.vim-jsdoc'),
         require('plugins.gitsigns-nvim'),
         require("plugins.nvim-web-devicons"),
+        require("plugins.lspsaga-nvim"),
+        require("plugins.lush-nvim"),
         require("plugins.jellybeans-vim")
     }
 })

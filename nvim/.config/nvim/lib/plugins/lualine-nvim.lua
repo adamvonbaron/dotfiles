@@ -4,6 +4,18 @@ return {
     local lualine = require('lualine')
 
     lualine.setup({
+      sections = {
+        lualine_x = {
+          "encoding",
+          {
+            "fileformat",
+            symbols = {
+              unix = ""
+            }
+          },
+          "filetype"
+        }
+      },
       options = {
         theme = "auto",
         component_separators = '|',

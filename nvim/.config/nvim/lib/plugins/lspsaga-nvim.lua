@@ -42,7 +42,10 @@ return {
     local lspsaga = require("lspsaga")
 
     lspsaga.setup({
-      border_style = "round"
+      border_style = "round",
+      lightbulb = {
+        sign = false
+      }
     })
   end,
   dependencies = {

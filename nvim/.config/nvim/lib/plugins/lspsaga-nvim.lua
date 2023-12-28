@@ -29,16 +29,16 @@ vim.api.nvim_set_keymap('n', 'gl', '<cmd>Lspsaga show_line_diagnostics<CR>', {})
 vim.api.nvim_set_keymap('n', '[e', '<cmd>Lspsaga diagnostic_jump_next<CR>', {})
 vim.api.nvim_set_keymap('n', ']e', '<cmd>Lspsaga diagnostic_jump_prev<CR>', {})
 
-vim.cmd [[
-  highlight LspSagaHoverBorder guifg=#d7d7d7
-  highlight LspFloatWinBorder guifg=#d7d7d7
-  highlight LspSagaHover guibg=#121212 guifg=#adadad
-  highlight LspSagaSignatureHelp guibg=#121212 guifg=#adadad
-]]
+-- vim.cmd [[
+--   highlight LspSagaHoverBorder guifg=#d7d7d7
+--   highlight LspFloatWinBorder guifg=#d7d7d7
+--   highlight LspSagaHover guibg=#121212 guifg=#adadad
+--   highlight LspSagaSignatureHelp guibg=#121212 guifg=#adadad
+-- ]]
 
 return {
   "nvimdev/lspsaga.nvim",
-  config = function ()
+  config = function()
     local lspsaga = require("lspsaga")
 
     lspsaga.setup({

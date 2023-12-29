@@ -24,6 +24,7 @@ lazy.setup({
     require('plugins.vim-test'),
     require('plugins.vim-dispatch'),
     require('plugins.vim-commentary'),
+    require("plugins.neodev-nvim"),
     require('plugins.nvim-lspconfig'),
     require('plugins.vim-eunuch'),
     require('plugins.nvim-cmp'),

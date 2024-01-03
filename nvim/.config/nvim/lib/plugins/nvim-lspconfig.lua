@@ -56,54 +56,93 @@ return {
     local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
     lspconfig["yamlls"].setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end
     })
 
     lspconfig["cssls"].setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end
     })
 
     lspconfig["dockerls"].setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end
     })
 
     lspconfig["graphql"].setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end
     })
 
     lspconfig["html"].setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end
     })
 
     lspconfig["jsonls"].setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end
     })
 
     lspconfig["solargraph"].setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end
     })
 
     lspconfig["sqlls"].setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end
     })
 
     lspconfig["pyright"].setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end
     })
 
     lspconfig["hls"].setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end
     })
 
     lspconfig["ocamllsp"].setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end
     })
 
     lspconfig["clangd"].setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end
     })
 
     lspconfig["gopls"].setup({
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end,
       cmd = { "gopls", "serve" },
       filetypes = { "go", "gomod" },
       root_dir = util.root_pattern("go.work", "go.mod", ".git"),
@@ -121,7 +160,10 @@ return {
     -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#elixirls
     lspconfig["elixirls"].setup({
       cmd = { "/opt/homebrew/bin/elixir-ls" },
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end,
     })
 
     local buf_map = function(bufnr, mode, lhs, rhs, opts)
@@ -134,6 +176,7 @@ return {
     -- bun install -g tsserver typescript-language-server
     lspconfig["tsserver"].setup({
       on_attach = function(client, bufnr)
+        client.server_capabilities.semanticTokensProvider = nil
         client.resolved_capabilities.document_formatting = false
         client.resolved_capabilities.document_range_formatting = false
         local ts_utils = require("nvim-lsp-ts-utils")
@@ -148,11 +191,17 @@ return {
     })
 
     lspconfig["rust_analyzer"].setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end,
     })
 
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end,
       settings = {
         Lua = {
           diagnostics = {
@@ -163,7 +212,10 @@ return {
     })
 
     lspconfig["prismals"].setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end,
     })
   end
 }

@@ -4,7 +4,3 @@ require("plugins")
 require("basic")
 require("theme")
 require("lsp")
-
-if vim.g.neovide then
-    require("neovide")
-end

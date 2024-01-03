@@ -50,6 +50,6 @@ lazy.setup({
     require("plugins.vim-graphql"),
     require("plugins.vim-prisma"),
     require("plugins.symbols-outline-nvim"),
-    require("plugins.base16-vim")
+    require("plugins.nord-vim")
   }
 })

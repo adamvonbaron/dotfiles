@@ -1,4 +1,4 @@
-vim.opt.guifont = "Monaco,Monaco Nerd Font:h12"
+vim.opt.guifont = "Monaco:h12"
 vim.opt.linespace = 0
 vim.g.neovide_hide_mouse_when_typing = false
 

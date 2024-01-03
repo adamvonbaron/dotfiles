@@ -17,7 +17,8 @@ return {
         }
       },
       options = {
-        theme = "auto",
+        icons_enabled = false,
+        theme = "iceberg_dark",
         component_separators = '|',
         section_separators = '',
       }

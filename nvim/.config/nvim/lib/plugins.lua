@@ -42,17 +42,14 @@ lazy.setup({
     require('plugins.rust-vim'),
     require('plugins.cql-vim'),
     require('plugins.vim-go'),
-    require('plugins.nvim-treesitter'),
+    require("plugins.nvim-treesitter"),
     require('plugins.trouble-nvim'),
     require('plugins.vim-jsdoc'),
     require('plugins.gitsigns-nvim'),
-    require("plugins.nvim-web-devicons"),
     require("plugins.lspsaga-nvim"),
-    require("plugins.lspkind-nvim"),
     require("plugins.vim-graphql"),
     require("plugins.vim-prisma"),
     require("plugins.symbols-outline-nvim"),
-    require("plugins.lush-nvim"),
-    require("plugins.jellybeans-vim")
+    require("plugins.iceberg-vim")
   }
 })

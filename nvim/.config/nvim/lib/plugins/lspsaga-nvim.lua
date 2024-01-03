@@ -45,6 +45,9 @@ return {
       border_style = "round",
       lightbulb = {
         sign = false
+      },
+      symbol_in_winbar = {
+        enable = false
       }
     })
   end,

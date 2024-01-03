@@ -18,7 +18,7 @@ return {
       },
       options = {
         icons_enabled = false,
-        theme = "solarized_dark",
+        theme = "nord",
         component_separators = '|',
         section_separators = '',
       }

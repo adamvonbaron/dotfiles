@@ -16,3 +16,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # opam configuration
 [[ ! -r /Users/adam/.opam/opam-init/init.zsh ]] || source /Users/adam/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+test -r ~/.dir_colors && eval $(gdircolors ~/.dir_colors)

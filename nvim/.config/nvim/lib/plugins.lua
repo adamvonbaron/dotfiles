@@ -36,7 +36,6 @@ lazy.setup({
     require('plugins.vim-elixir'),
     require('plugins.telescope-nvim'),
     require('plugins.plenary-nvim'),
-    require('plugins.lualine-nvim'),
     require('plugins.vim-mix-format'),
     require('plugins.vim-prettier'),
     require('plugins.rust-vim'),
@@ -50,6 +49,7 @@ lazy.setup({
     require("plugins.vim-graphql"),
     require("plugins.vim-prisma"),
     require("plugins.symbols-outline-nvim"),
-    require("plugins.nord-vim")
+    require("plugins.nord-vim"),
+    require("plugins.vacme")
   }
 })

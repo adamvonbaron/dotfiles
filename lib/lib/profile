@@ -1,4 +1,4 @@
-path=(/Users/adam/bin /Users/adam/.local/bin /Users/adam/go/bin /Users/adam/.yarn/bin /usr/local/plan9/bin /opt/homebrew/opt/asdf/libexec/bin /opt/homebrew/opt/llvm/bin /opt/homebrew/bin /opt/homebrew/sbin /usr/local/bin /usr/local/sbin $path)
+path=(/Users/adam/bin /Users/adam/.local/bin /Users/adam/go/bin /Users/adam/.bun/bin /Users/adam/.yarn/bin /opt/homebrew/opt/asdf/libexec/bin /opt/homebrew/opt/llvm/bin /opt/homebrew/bin /opt/homebrew/sbin /usr/local/bin /usr/local/sbin /usr/sbin /sbin $path /usr/local/plan9/bin)
 browser=safari
 pager=nobs
 term=dumb

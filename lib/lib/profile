@@ -2,7 +2,9 @@ path=(/Users/adam/bin /Users/adam/.local/bin /Users/adam/go/bin /Users/adam/.bun
 browser=safari
 pager=nobs
 term=dumb
+gopath=/Users/adam/go
 
 BROWSER=safari
 PAGER=nobs
 TERM=dumb
+GOPATH=/Users/adam/go

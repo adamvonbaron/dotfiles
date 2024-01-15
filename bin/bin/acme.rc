@@ -12,4 +12,4 @@ fn cd {
 tabstop=4
 
 plumber
-exec acme -a $* &
+exec acme -f /mnt/font/LucidaConsole/12a/font -a $* &

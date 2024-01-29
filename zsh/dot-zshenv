@@ -1,4 +1,4 @@
 export PLAN9="/usr/local/plan9"
 
-export PATH="/Users/adam/bin:/Users/adam/.local/bin:/Users/adam/.bun/bin:/Users/adam/Source/elixir-1.15.7/bin:/opt/homebrew/opt/llvm/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/adam/Library/Application Support/JetBrains/Toolbox/scripts:$PLAN9/bin"
+export PATH="$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$HOME/.bun/bin:$HOME/Source/elixir-1.15.7/bin:/opt/homebrew/opt/llvm/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/go/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PLAN9/bin"
 

@@ -1,10 +1,17 @@
-export ZSH="/Users/adam/.oh-my-zsh"
+platform=$(uname -s)
+
+if [[ "$platform" == 'Linux' ]]; then
+	export ZSH="/home/adam/.oh-my-zsh"
+else
+	export ZSH="/Users/adam/.oh-my-zsh"
+fi
+
 ZSH_THEME="minimal"
 # CASE_SENSITIVE="true"
 ENABLE_CORRECTION="true"
 EDITOR="subl -w"
 
-plugins=(git ag aws bundler celery colored-man-pages colorize docker-compose docker-machine docker dotenv gem mix npm pip python rails rake redis-cli ruby tmux yarn)
+plugins=(git ag colored-man-pages colorize docker-compose docker-machine docker dotenv mix redis-cli tmux)
 source $ZSH/oh-my-zsh.sh
 
 export NVM_DIR="$HOME/.nvm"
@@ -12,7 +19,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # bun completions
-[ -s "/Users/adam/.bun/_bun" ] && source "/Users/adam/.bun/_bun"
-
-# opam configuration
-[[ ! -r /Users/adam/.opam/opam-init/init.zsh ]] || source /Users/adam/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"

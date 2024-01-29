@@ -5,6 +5,14 @@ SHELL=rc
 BROWSER=safari
 PAGER=nobs
 
+platform=`{uname -s}
+acmefont=/mnt/font/LucidaConsole/12a/font
+
+if (~ $platform Linux) {
+	# using 5k display on linux
+	acmefont=/mnt/font/LucidaConsole/20a/font
+}
+
 fn cd {
   builtin cd $1 && awd $sysname
 }
@@ -12,4 +20,4 @@ fn cd {
 tabstop=4
 
 plumber
-exec acme -f /mnt/font/LucidaConsole/12a/font -a $* &
+exec acme -f $acmefont -a $* &

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec "/home/adam/opt/lua-language-server/bin/lua-language-server" "$@"

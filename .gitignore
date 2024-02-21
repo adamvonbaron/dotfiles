@@ -1,2 +1,5 @@
 coc/.config/coc/extensions/node_modules
 .DS_Store
+
+textadept/.textadept/*
+!textadept/.textadept/init.lua

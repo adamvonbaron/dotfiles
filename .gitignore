@@ -3,3 +3,4 @@ coc/.config/coc/extensions/node_modules
 
 textadept/.textadept/*
 !textadept/.textadept/init.lua
+!textadept/.textadept/themes

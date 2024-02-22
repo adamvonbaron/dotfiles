@@ -2,7 +2,7 @@ local lsp = require('lsp')
 
 
 if not CURSES then
-	view:set_theme('monochrome', {font = 'Lucida Console', size=10})
+	view:set_theme('monochrome', {font = 'Lucida Console', size=11})
 end
 
 buffer.use_tabs = false

@@ -1,4 +1,5 @@
 local lsp = require('lsp')
+local format = require('format')
 
 
 if not CURSES then
@@ -13,6 +14,13 @@ events.connect(events.FILE_CHANGED, function(filename)
    buffer:reload()
    return true
 end, 1)
+
+format.commands = {
+    cpp = 'clang-format',
+    ansi_c = 'clang-format',
+    lua = 'stylua -',
+    go = 'gofmt'
+}
 
 keys['ctrl+f12'] = lsp.goto_declaration
 

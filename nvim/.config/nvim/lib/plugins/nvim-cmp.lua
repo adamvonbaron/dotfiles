@@ -4,10 +4,16 @@ return {
     "onsails/lspkind.nvim"
   },
   config = function()
+    vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#FFFFFF", fg = "#000000" })
+
     local cmp = require("cmp")
-    local lspkind = require("lspkind")
 
     cmp.setup({
+      window = {
+        completion = {
+          winhighlight = "Normal:CmpNormal"
+        }
+      },
       snippet = {
         expand = function(args)
           local luasnip = require("luasnip")
@@ -33,13 +39,6 @@ return {
       }, {
         { name = 'buffer' }
       }),
-      formatting = {
-        format = lspkind.cmp_format({
-          model = 'symbol',
-          maxwidth = 50,
-          ellipsis_char = '...',
-        })
-      }
     })
   end
 }

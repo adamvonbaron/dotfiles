@@ -3,7 +3,7 @@ vim.opt.wrap = false
 vim.opt.backup = false
 vim.opt.swapfile = false
 vim.opt.cursorline = false
-vim.opt.number = true
+vim.opt.number = false
 
 vim.opt.encoding = "utf-8"
 
@@ -20,3 +20,4 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 
 vim.opt.completeopt = "menu,menuone,noselect"
+vim.opt.signcolumn = "no"

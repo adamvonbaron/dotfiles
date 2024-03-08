@@ -1,5 +1,6 @@
-vim.opt.background = "light"
-vim.opt.syntax = "enable"
-vim.opt.cursorline = true
-vim.cmd("colorscheme vacme")
--- vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+vim.opt.cursorline = false
+vim.cmd("set termguicolors")
+vim.cmd("set background=dark")
+vim.cmd("syntax off")
+vim.cmd('highlight Normal guifg=white ctermfg=white')
+vim.cmd('highlight Normal guibg=black ctermbg=black')

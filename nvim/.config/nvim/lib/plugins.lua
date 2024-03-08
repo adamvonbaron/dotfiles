@@ -18,9 +18,7 @@ local lazy = require("lazy")
 -- todo: can this just be lazy.setup("plugins")?
 lazy.setup({
   spec = {
-    require("plugins.vim-rails"),
     require("plugins.vim-surround"),
-    require("plugins.vim-fugitive"),
     require('plugins.vim-test'),
     require('plugins.vim-dispatch'),
     require('plugins.vim-commentary'),
@@ -33,23 +31,13 @@ lazy.setup({
     require("plugins.LuaSnip"),
     require("plugins.cmp_luasnip"),
     require('plugins.black'),
-    require('plugins.vim-elixir'),
     require('plugins.telescope-nvim'),
     require('plugins.plenary-nvim'),
-    require('plugins.vim-mix-format'),
-    require('plugins.vim-prettier'),
     require('plugins.rust-vim'),
     require('plugins.cql-vim'),
     require('plugins.vim-go'),
-    require("plugins.nvim-treesitter"),
     require('plugins.trouble-nvim'),
-    require('plugins.vim-jsdoc'),
-    require('plugins.gitsigns-nvim'),
     require("plugins.lspsaga-nvim"),
-    require("plugins.vim-graphql"),
-    require("plugins.vim-prisma"),
     require("plugins.symbols-outline-nvim"),
-    require("plugins.nord-vim"),
-    require("plugins.vacme")
   }
 })

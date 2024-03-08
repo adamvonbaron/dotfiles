@@ -1,1 +1,0 @@
-return { "heavenshell/vim-jsdoc" }

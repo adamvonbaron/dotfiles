@@ -4,3 +4,5 @@ setenv PATH $HOME/bin:$HOME/.local/bin:$HOME/go/bin:$HOME/.luarocks/bin:$HOME/.b
 
 setenv EDITOR "subl -w"
 
+set prompt = "%n@%m:%~> "
+

@@ -1,3 +1,4 @@
+; bootstrap straight.el
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name
@@ -14,11 +15,28 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+; GUI stuff
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq make-backup-files nil)
+(set-frame-font "JetBrains Mono 10" nil t)
 
+; package list
 (when (version< emacs-version "29.0") (straight-use-package 'eglot))
 (straight-use-package 'evil)
 (straight-use-package 'ivy)
 (straight-use-package 'dash)
+(straight-use-package 'cider)
+(straight-use-package 'company)
+(straight-use-package 'go-mode)
+(straight-use-package 'lua-mode)
+(straight-use-package 'clojure-mode)
+(straight-use-package 'doom-modeline)
+
+; doom-modeline
+(require 'doom-modeline)
+(setq doom-modeline-icon nil)
+(doom-modeline-mode 1)
+
+; company-mode
+(global-company-mode)

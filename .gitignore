@@ -6,3 +6,7 @@ textadept/.textadept/*
 !textadept/.textadept/themes
 
 drawterm
+
+# emacs stuff
+emacs/.emacs.d/straight/
+emacs/.emacs.d/auto-save-list/

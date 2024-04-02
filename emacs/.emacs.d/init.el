@@ -1,4 +1,4 @@
-; bootstrap straight.el
+;; bootstrap straight.el
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name
@@ -15,14 +15,13 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-; GUI stuff
+;; GUI stuff
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq make-backup-files nil)
 (set-frame-font "JetBrains Mono 10" nil t)
 
-; package list
-(when (version< emacs-version "29.0") (straight-use-package 'eglot))
+;; package list
 (straight-use-package 'evil)
 (straight-use-package 'ivy)
 (straight-use-package 'dash)
@@ -33,10 +32,17 @@
 (straight-use-package 'clojure-mode)
 (straight-use-package 'doom-modeline)
 
-; doom-modeline
+;; evil-mode
+(evil-mode)
+
+;; doom-modeline
 (require 'doom-modeline)
 (setq doom-modeline-icon nil)
 (doom-modeline-mode 1)
 
-; company-mode
+;; company-mode
 (global-company-mode)
+
+;; ensure eglot connects to LSP servers
+;; go
+(add-hook 'go-mode-hook 'eglot-ensure) ;gopls

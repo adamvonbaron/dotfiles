@@ -1,10 +1,5 @@
 [user]
 	name = Adam Kessler
 	email = exitsnil@gmail.com
-[merge]
-	tool = smerge
-[mergetool "smerge"]
-	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-	trustExitCode = true
 [commit]
 	gpgsign = true

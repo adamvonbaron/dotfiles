@@ -20,6 +20,7 @@
 (tool-bar-mode -1)
 (setq make-backup-files nil)
 (set-frame-font "JetBrains Mono 10" nil t)
+(global-font-lock-mode 0)
 
 ;; package list
 (straight-use-package 'evil)

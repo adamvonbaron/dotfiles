@@ -1,3 +1,4 @@
+export PS1="$ "
 export EDITOR="/usr/bin/nvim"
 
 eval "$(luarocks path --bin)"

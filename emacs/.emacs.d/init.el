@@ -21,6 +21,7 @@
 (setq make-backup-files nil)
 (set-frame-font "JetBrains Mono 10" nil t)
 (global-font-lock-mode 0)
+(setq-default truncate-lines t)
 
 ;; package list
 (straight-use-package 'evil)

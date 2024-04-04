@@ -20,11 +20,11 @@
 (tool-bar-mode -1)
 (setq make-backup-files nil)
 (set-frame-font "JetBrains Mono 10" nil t)
-(global-font-lock-mode 0)
+;; (global-font-lock-mode 0)
 (setq-default truncate-lines t)
 
 ;; package list
-(straight-use-package 'evil)
+;; (straight-use-package 'evil)
 (straight-use-package 'ivy)
 (straight-use-package 'dash)
 (straight-use-package 'cider)
@@ -33,9 +33,11 @@
 (straight-use-package 'lua-mode)
 (straight-use-package 'clojure-mode)
 (straight-use-package 'doom-modeline)
+(straight-use-package 'dap-mode)
+(straight-use-package 'magit)
 
 ;; evil-mode
-(evil-mode)
+;; (evil-mode)
 
 ;; doom-modeline
 (require 'doom-modeline)
@@ -48,3 +50,5 @@
 ;; ensure eglot connects to LSP servers
 ;; go
 (add-hook 'go-mode-hook 'eglot-ensure) ;gopls
+;; clojure
+(add-hook 'clojure-mode-hook 'eglot-ensure) ;clojure-lsp?

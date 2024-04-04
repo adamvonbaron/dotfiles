@@ -11,3 +11,6 @@ drawterm
 emacs/.emacs.d/straight/
 emacs/.emacs.d/auto-save-list/
 emacs/.emacs.d/eln-cache
+emacs/.emacs.d/#init.el#
+
+bin/bin/clojure-lsp

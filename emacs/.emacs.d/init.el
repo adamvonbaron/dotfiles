@@ -22,6 +22,7 @@
 (set-frame-font "JetBrains Mono 10" nil t)
 ;; (global-font-lock-mode 0)
 (setq-default truncate-lines t)
+(setq resize-mini-windows nil)
 
 ;; package list
 ;; (straight-use-package 'evil)
@@ -49,6 +50,8 @@
 
 ;; ensure eglot connects to LSP servers
 ;; go
-(add-hook 'go-mode-hook 'eglot-ensure) ;gopls
+(add-hook 'go-mode-hook 'eglot-ensure) ; gopls
 ;; clojure
-(add-hook 'clojure-mode-hook 'eglot-ensure) ;clojure-lsp?
+(add-hook 'clojure-mode-hook 'eglot-ensure) ; clojure-lsp
+;; c
+(add-hook 'c-mode-hook 'eglot-ensure) ; clangd

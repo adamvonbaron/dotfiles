@@ -18,3 +18,4 @@ bin/bin/clojure-lsp
 bin/bin/lein
 bin/bin/Discord
 bin/bin/guile
+bin/bin/guild

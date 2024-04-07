@@ -34,9 +34,12 @@
 (straight-use-package 'go-mode)
 (straight-use-package 'lua-mode)
 (straight-use-package 'clojure-mode)
+(straight-use-package 'geiser)
+(straight-use-package 'geiser-guile)
 (straight-use-package 'doom-modeline)
 (straight-use-package 'dap-mode)
 (straight-use-package 'magit)
+(straight-use-package 'paredit)
 
 ;; evil-mode
 ;; (evil-mode)
@@ -48,6 +51,15 @@
 
 ;; company-mode
 (global-company-mode)
+
+;; geiser
+(add-hook 'scheme-mode-hook 'geiser-mode)
+
+;; paredit
+(add-hook 'clojure-mode-hook 'enable-paredit-mode)
+(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+(add-hook 'guile-mode-hook 'enable-paredit-mode)
+(add-hook 'scheme-mode-hook 'enable-paredit-mode)
 
 ;; ensure eglot connects to LSP servers
 ;; go

@@ -31,6 +31,7 @@
 (straight-use-package 'dash)
 (straight-use-package 'cider)
 (straight-use-package 'company)
+(straight-use-package 'flycheck)
 (straight-use-package 'go-mode)
 (straight-use-package 'lua-mode)
 (straight-use-package 'clojure-mode)
@@ -51,6 +52,9 @@
 
 ;; company-mode
 (global-company-mode)
+
+;; flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; geiser
 (add-hook 'scheme-mode-hook 'geiser-mode)

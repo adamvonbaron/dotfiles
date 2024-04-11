@@ -12,6 +12,7 @@ emacs/.emacs.d/straight/
 emacs/.emacs.d/auto-save-list/
 emacs/.emacs.d/eln-cache
 emacs/.emacs.d/#init.el#
+emacs/.emacs.d/transient/
 
 # stuff in my bin i dont want to commit
 bin/bin/clojure-lsp

@@ -3,3 +3,5 @@
 	email = exitsnil@gmail.com
 [commit]
 	gpgsign = true
+[init]
+	defaultBranch = master

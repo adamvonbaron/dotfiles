@@ -45,6 +45,9 @@
 ;; evil-mode
 ;; (evil-mode)
 
+;; org-mode
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+
 ;; doom-modeline
 (require 'doom-modeline)
 (setq doom-modeline-icon nil)

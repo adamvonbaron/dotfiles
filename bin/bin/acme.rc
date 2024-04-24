@@ -6,12 +6,12 @@ BROWSER=safari
 PAGER=nobs
 
 platform=`{uname -s}
-acmefont=/mnt/font/LucidaConsole/12a/font
+acmefont=/mnt/font/LucidaConsole/11a/font
 
-if (~ $platform Linux) {
-	# using 5k display on linux
-	acmefont=/mnt/font/LucidaConsole/20a/font
-}
+# if (~ $platform Linux) {
+#	# using 5k display on linux
+#	acmefont=/mnt/font/LucidaConsole/11a/font
+# }
 
 fn cd {
   builtin cd $1 && awd $sysname

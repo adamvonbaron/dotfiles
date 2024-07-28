@@ -1,6 +1,4 @@
 export PS1="$ "
-export EDITOR="/usr/bin/nvim"
-
-eval "$(luarocks path --bin)"
+export EDITOR="/usr/bin/emacs -nw"
 
 test -s ~/.alias && . ~/.alias || true

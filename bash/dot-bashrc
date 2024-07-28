@@ -1,4 +1,4 @@
-export PS1="$ "
+export PS1="\u@\h \w $ "
 export EDITOR="/usr/bin/emacs -nw"
 
 test -s ~/.alias && . ~/.alias || true

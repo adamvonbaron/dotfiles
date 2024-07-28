@@ -23,7 +23,7 @@
 ;; (global-font-lock-mode 0)
 (setq-default truncate-lines t)
 (setq resize-mini-windows nil)
-(load-theme 'modus-operandi t)
+(load-theme 'modus-vivendi t)
 
 ;; package list
 ;; (straight-use-package 'evil)

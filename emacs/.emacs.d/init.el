@@ -19,7 +19,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq make-backup-files nil)
-(set-frame-font "Lucida Console 10" nil t)
+(set-frame-font "Consolas 10" nil t)
 ;; (global-font-lock-mode 0)
 (setq-default truncate-lines t)
 (setq resize-mini-windows nil)

@@ -77,6 +77,10 @@
 (add-hook 'c-mode-hook 'eglot-ensure) ; clangd
 ;; cpp
 (add-hook 'c++-mode-hook 'eglot-ensure) ; clangd
+;; javascript
+(add-hook 'js-mode-hook 'eglot-ensure) ; typescript-language-server
+;; typescript
+(add-hook 'ts-mode-hook 'eglot-ensure) ; typescript-language-server
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

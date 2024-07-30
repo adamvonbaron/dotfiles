@@ -20,3 +20,7 @@ bin/bin/lein
 bin/bin/Discord
 bin/bin/guile
 bin/bin/guild
+
+gnupg/.gnupg/*
+!gnupg/.gnupg/gpg.conf
+!gnupg/.gnupg/gpg-agent.conf

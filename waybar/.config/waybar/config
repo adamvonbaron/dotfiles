@@ -1,7 +1,5 @@
 {
   "height": 30, // Waybar height (to be removed for auto height)
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
     "modules-right": ["custom/media", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "custom/clock", "tray"],
     "sway/workspaces": {
       "all-outputs": true,

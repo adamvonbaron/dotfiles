@@ -1,6 +1,7 @@
 {
   "height": 30, // Waybar height (to be removed for auto height)
-    "modules-right": ["custom/media", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "custom/clock", "tray"],
+    "modules-right": ["custom/media", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "tray", "custom/clock"],
+    "modules-left": ["wlr/taskbar"],
     "sway/workspaces": {
       "all-outputs": true,
       "persistent_workspaces": true,
@@ -106,5 +107,9 @@
       },
       "escape": true,
       "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources folder
+    },
+    "wlr/taskbar": {
+      "format": "{icon} {title}",
+      "on-click": "minimize-raise",
     },
 }

@@ -1,7 +1,6 @@
 <labwc_config>
   <theme>
     <name></name>
-    <cornerRadius>8</cornerRadius>
     <font name="JetBrains Mono" size="10" />
   </theme>
 

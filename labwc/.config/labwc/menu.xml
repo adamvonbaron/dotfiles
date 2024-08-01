@@ -58,6 +58,9 @@
   <item label="Telegram">
     <action name="Execute" command="telegram" />
   </item>
+  <item label="pavucontrol">
+    <action name="Execute" command="pavucontrol" />
+  </item>
   <item label="Reconfigure">
     <action name="Reconfigure" />
   </item>

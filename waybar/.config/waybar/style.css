@@ -18,15 +18,6 @@ window#waybar.hidden {
   opacity: 0.2;
 }
 
-window#waybar.termite {
-  background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-  background-color: #000000;
-  border: none;
-}
-
 #workspaces button {
   padding: 0 5px;
   background-color: transparent;

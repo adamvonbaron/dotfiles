@@ -7,4 +7,5 @@ export PATH="$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/bin:/usr/local/g
 export GTK_THEME=Adwaita:dark
 export XCURSOR_THEME=Adwaita
 export XCURSOR_SIZE=24
-
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_ENABLE_HIGHDPI_SCALING=1

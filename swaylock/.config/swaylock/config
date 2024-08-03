@@ -1,0 +1,6 @@
+ignore-empty-password
+daemonize
+indicator-caps-lock
+color=141414
+font=JetBrains Mono
+font-size=11

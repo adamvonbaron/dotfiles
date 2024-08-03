@@ -23,6 +23,11 @@ bin/bin/Discord
 bin/bin/guile
 bin/bin/guild
 
+# only save gpg configuration (not keys !!!!!)
 gnupg/.gnupg/*
 !gnupg/.gnupg/gpg.conf
 !gnupg/.gnupg/gpg-agent.conf
+
+
+# dont save msmtp log
+msmtp/.config/msmtp/log

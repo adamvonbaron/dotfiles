@@ -1,0 +1,17 @@
+defaults
+auth on
+tls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+tls_starttls off
+logfile ~/.config/msmtp/log
+
+
+# gmail
+account gmail
+host smtp.gmail.com
+port 465
+from exitsnil@gmail.com
+user exitsnil
+passwordeval "gpg -q --for-your-eyes-only --no-tty -d ~/.gnupg/emailpassword.gpg"
+
+account default: gmail

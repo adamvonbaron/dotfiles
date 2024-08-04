@@ -4,8 +4,10 @@ set spoolfile=+Inbox/
 set header_cache=~/.cache/mutt
 set edit_headers=yes
 set realname="Adam Kessler"
+set from=exitsnil@gmail.com
 set sendmail="/usr/local/bin/msmtp"
 set sort=threads
+unset record
 
 
 macro index <F8> \
@@ -27,3 +29,5 @@ macro index <F6> \
 <pipe-message>notmuch-mutt tag -- -inbox<enter>\
 <enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
 "notmuch: remove message from inbox"
+
+source ~/.mutt/gpg.rc

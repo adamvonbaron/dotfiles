@@ -5,6 +5,7 @@ set header_cache=~/.cache/mutt
 set edit_headers=yes
 set realname="Adam Kessler"
 set from=exitsnil@gmail.com
+set hostname="gmail.com"
 set sendmail="/usr/local/bin/msmtp"
 set sort=threads
 unset record

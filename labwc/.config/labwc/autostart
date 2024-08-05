@@ -5,4 +5,4 @@ mako >/dev/null 2>&1 &
 blueman-applet >/dev/null 2>&1 &
 dex -a >/dev/null 2>&1 &
 swayidle >/dev/null 2>&1 &
-wlsunset -S "8:00" -s "7:00" -t 4100 >/dev/null 2>&1 &
+wlsunset -S "8:00" -s "7:00" -t 2500 >/dev/null 2>&1 &

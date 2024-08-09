@@ -1,3 +1,3 @@
 profile {
-	output * enable scale 2 mode 5120x2880
+	output DP-1 enable scale 2 mode 5120x2880
 }

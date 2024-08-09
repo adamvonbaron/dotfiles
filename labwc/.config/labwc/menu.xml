@@ -56,7 +56,7 @@
     <action name="Execute" command="Discord" />
   </item>
   <item label="Telegram">
-    <action name="Execute" command="telegram" />
+    <action name="Execute" command="Telegram" />
   </item>
   <item label="Thunar">
     <action name="Execute" command="Thunar" />

@@ -15,18 +15,9 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-;; GUI stuff
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(setq make-backup-files nil)
-(set-frame-font "JetBrains Mono 10" nil t)
-;; (global-font-lock-mode 0)
-(setq-default truncate-lines t)
-(setq resize-mini-windows nil)
-(load-theme 'modus-vivendi t)
-
 ;; package list
 ;; (straight-use-package 'evil)
+(straight-use-package 'base16-theme)
 (straight-use-package 'ivy)
 (straight-use-package 'dash)
 (straight-use-package 'cider)
@@ -41,6 +32,19 @@
 (straight-use-package 'dap-mode)
 (straight-use-package 'magit)
 (straight-use-package 'paredit)
+
+;; core configuration
+(setq auto-save-default nil)
+
+;; GUI stuff
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(setq make-backup-files nil)
+(set-frame-font "JetBrains Mono 10" nil t)
+;; (global-font-lock-mode 0)
+(setq-default truncate-lines t)
+(setq resize-mini-windows nil)
+(load-theme 'base16-grayscale-dark t)
 
 ;; evil-mode
 ;; (evil-mode)
@@ -67,6 +71,15 @@
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'guile-mode-hook 'enable-paredit-mode)
 (add-hook 'scheme-mode-hook 'enable-paredit-mode)
+
+;; go-mode
+(setq gofmt-command "goimports")
+(defun go-fmt-on-save ()
+  "Run gofmt before saving file in go-mode."
+  (when (eq major-mode 'go-mode)
+    #'gofmt-before-save)
+  )
+(add-hook 'before-save-hook #'go-fmt-on-save)
 
 ;; ensure eglot connects to LSP servers
 ;; go

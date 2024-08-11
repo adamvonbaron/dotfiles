@@ -109,7 +109,7 @@
       "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources folder
     },
     "wlr/taskbar": {
-      "format": "{icon} {title}",
+      "format": "{icon}",
       "on-click": "minimize-raise",
     },
 }

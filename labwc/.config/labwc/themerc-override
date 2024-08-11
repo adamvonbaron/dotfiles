@@ -6,8 +6,8 @@
 # make sure all other lines are commented out or deleted.
 
 # general
-border.width: 1
-padding.height: 5
+border.width: 5
+padding.height: 3
 
 # The following options has no default, but fallbacks back to
 # font-height + 2x padding.height if not set.
@@ -15,7 +15,7 @@ padding.height: 5
 
 # window border
 # window.active.border.color: #222222
-# window.inactive.border.color: #1b1b1b
+window.inactive.border.color: #f7f7f7
 
 # ToggleKeybinds status indicator
 # window.active.indicator.toggled-keybind.color: #ff0000
@@ -37,8 +37,8 @@ window.label.text.justify: left
 # window.inactive.button.unpressed.image.color: #ABABAB
 
 # window drop-shadows
-window.active.shadow.size: 60
-window.inactive.shadow.size: 40
+window.active.shadow.size: 0
+window.inactive.shadow.size: 0
 window.active.shadow.color: #00000060
 window.inactive.shadow.color: #00000040
 

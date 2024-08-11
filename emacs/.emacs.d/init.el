@@ -44,7 +44,7 @@
 ;; (global-font-lock-mode 0)
 (setq-default truncate-lines t)
 (setq resize-mini-windows nil)
-(load-theme 'base16-grayscale-dark t)
+(load-theme 'base16-grayscale-light t)
 
 ;; evil-mode
 ;; (evil-mode)

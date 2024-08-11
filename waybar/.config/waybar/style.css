@@ -7,9 +7,9 @@
 }
 
 window#waybar {
-  background-color: #141414;
+  background-color: #bfbfbf;
   /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-  color: #c5c8c6;
+  color: #141414;
   transition-property: background-color;
   transition-duration: .5s;
 }

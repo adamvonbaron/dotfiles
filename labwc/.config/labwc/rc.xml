@@ -1,7 +1,7 @@
 <labwc_config>
   <theme>
     <name></name>
-    <font name="JetBrains Mono" size="10" />
+    <font name="Ubuntu Mono" size="12" />
   </theme>
 
   <keyboard>

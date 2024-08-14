@@ -40,7 +40,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq make-backup-files nil)
-(set-frame-font "JetBrains Mono 10" nil t)
+(set-frame-font "Ubuntu Mono 12" nil t)
 ;; (global-font-lock-mode 0)
 (setq-default truncate-lines t)
 (setq resize-mini-windows nil)

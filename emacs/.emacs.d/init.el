@@ -17,7 +17,7 @@
 
 ;; package list
 ;; (straight-use-package 'evil)
-(straight-use-package 'monokai-pro-theme)
+(straight-use-package 'catppuccin-theme)
 (straight-use-package 'ivy)
 (straight-use-package 'dash)
 (straight-use-package 'cider)
@@ -44,7 +44,7 @@
 ;; (global-font-lock-mode 0)
 (setq-default truncate-lines t)
 (setq resize-mini-windows nil)
-(load-theme 'monokai-pro t)
+(load-theme 'catppuccin :no-confirm)
 
 ;; evil-mode
 ;; (evil-mode)

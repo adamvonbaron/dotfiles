@@ -32,6 +32,7 @@
 (straight-use-package 'dap-mode)
 (straight-use-package 'magit)
 (straight-use-package 'paredit)
+(straight-use-package 'typescript-mode)
 
 ;; core configuration
 (setq auto-save-default nil)
@@ -40,7 +41,9 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq make-backup-files nil)
-(set-frame-font "Ubuntu Mono 12" nil t)
+(set-frame-font "Noto Sans Mono 10" nil t)
+(set-face-attribute 'default nil :family "Noto Sans Mono")
+(set-face-attribute 'variable-pitch nil :family "Noto Sans")
 ;; (global-font-lock-mode 0)
 (setq-default truncate-lines t)
 (setq resize-mini-windows nil)
@@ -93,7 +96,8 @@
 ;; javascript
 (add-hook 'js-mode-hook 'eglot-ensure) ; typescript-language-server
 ;; typescript
-(add-hook 'ts-mode-hook 'eglot-ensure) ; typescript-language-server
+(add-hook 'typescript-mode-hook 'eglot-ensure) ; typescript-language-server
+(add-hook 'ts-mode-hook 'eglot-ensure)
 
 ;; notmuch
 (require 'notmuch)

@@ -47,7 +47,7 @@
 ;; (global-font-lock-mode 0)
 (setq-default truncate-lines t)
 (setq resize-mini-windows nil)
-(load-theme 'catppuccin :no-confirm)
+(load-theme 'modus-vivendi :no-confirm)
 
 ;; evil-mode
 ;; (evil-mode)

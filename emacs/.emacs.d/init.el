@@ -17,7 +17,6 @@
 
 ;; package list
 ;; (straight-use-package 'evil)
-(straight-use-package 'catppuccin-theme)
 (straight-use-package 'ivy)
 (straight-use-package 'dash)
 (straight-use-package 'cider)

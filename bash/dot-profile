@@ -4,3 +4,4 @@ export PLAN9="/usr/local/plan9"
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.local/share/coursier/bin:$HOME/go/bin:/usr/local/bin:/usr/local/go/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PLAN9/bin:$WASMTIME_HOME/bin"
 
+. "/home/adam/.deno/env"

@@ -4,6 +4,7 @@ export EDITOR="/usr/local/bin/mg"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/lib/pkgconfig"
 
 test -s ~/.alias && . ~/.alias || true
+test -s ~/.profile && . ~/.profile || true
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

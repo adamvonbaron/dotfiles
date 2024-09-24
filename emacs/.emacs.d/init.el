@@ -32,6 +32,8 @@
 (straight-use-package 'magit)
 (straight-use-package 'paredit)
 (straight-use-package 'typescript-mode)
+(straight-use-package 'scala-mode)
+(straight-use-package 'sbt-mode)
 
 ;; core configuration
 (setq auto-save-default nil)
@@ -40,8 +42,8 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq make-backup-files nil)
-(set-frame-font "JetBrains Mono 10" nil t)
-(set-face-attribute 'default nil :family "JetBrains Mono")
+(set-frame-font "Consolas 11" nil t)
+(set-face-attribute 'default nil :family "Consolas")
 (set-face-attribute 'variable-pitch nil :family "Noto Sans")
 ;; (global-font-lock-mode 0)
 (setq-default truncate-lines t)
@@ -97,9 +99,11 @@
 ;; typescript
 (add-hook 'typescript-mode-hook 'eglot-ensure) ; typescript-language-server
 (add-hook 'ts-mode-hook 'eglot-ensure)
+;; scala
+(add-hook 'scala-mode-hook 'eglot-ensure)
 
 ;; notmuch
-(require 'notmuch)
+;; (require 'notmuch)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

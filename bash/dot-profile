@@ -2,7 +2,7 @@ test -z "$PROFILEREAD" && . /etc/profile || true
 export LANG=en_US.UTF-8
 export PLAN9="/usr/local/plan9"
 export WASMTIME_HOME="$HOME/.wasmtime"
-export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.local/share/coursier/bin:$HOME/go/bin:/usr/local/bin:/usr/local/go/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PLAN9/bin:$WASMTIME_HOME/bin:/snap/bin"
+export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.local/share/coursier/bin:$HOME/go/bin:$HOME/.cabal/bin:$HOME/.ghcup/bin:/usr/local/bin:/usr/local/go/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PLAN9/bin:$WASMTIME_HOME/bin:/snap/bin"
 
 . "/home/adam/.deno/env"
 . "$HOME/.cargo/env"

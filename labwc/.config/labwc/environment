@@ -83,3 +83,6 @@
 
 # LABWC_FALLBACK_OUTPUT=NOOP-fallback
 
+
+# use nVidia card
+WLR_DRM_DEVICES=/dev/dri/card1

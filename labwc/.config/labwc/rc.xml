@@ -1,7 +1,7 @@
 <labwc_config>
   <theme>
     <name></name>
-    <font name="Ubuntu Mono" size="12" />
+    <font name="Inconsolata" size="12" />
   </theme>
 
   <keyboard>

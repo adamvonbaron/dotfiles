@@ -49,8 +49,8 @@
   <item label="Emacs">
     <action name="Execute" command="emacs" />
   </item>
-  <item label="Firefox">
-    <action name="Execute" command="firefox" />
+  <item label="Google Chrome">
+    <action name="Execute" command="google-chrome-stable" />
   </item>
   <item label="Discord">
     <action name="Execute" command="Discord" />

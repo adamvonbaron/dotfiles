@@ -1,5 +1,5 @@
 kanshi >/dev/null 2>&1 &
-wbg ~/.config/wbg/bfbfbf.png >/dev/null 2>&1 &
+wbg -s ~/.config/wbg/141414.png >/dev/null 2>&1 &
 waybar >/dev/null 2>&1 &
 mako >/dev/null 2>&1 &
 blueman-applet >/dev/null 2>&1 &

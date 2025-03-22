@@ -28,3 +28,6 @@ eval $(opam env)
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+
+# initialize bash completions
+source /usr/share/bash-completion/completions/git

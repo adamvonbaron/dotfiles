@@ -39,5 +39,6 @@ lazy.setup({
     require('plugins.trouble-nvim'),
     require("plugins.lspsaga-nvim"),
     require("plugins.symbols-outline-nvim"),
+    require("plugins.tokyo-night-nvim")
   }
 })

@@ -174,7 +174,7 @@ return {
 
     -- need to install tsserver and typescript-language-server globally
     -- bun install -g tsserver typescript-language-server
-    lspconfig["tsserver"].setup({
+    lspconfig["ts_ls"].setup({
       on_attach = function(client, bufnr)
         client.server_capabilities.semanticTokensProvider = nil
         client.resolved_capabilities.document_formatting = false

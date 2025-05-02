@@ -4,7 +4,7 @@ return {
     "onsails/lspkind.nvim"
   },
   config = function()
-    vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#FFFFFF", fg = "#000000" })
+    -- vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#FFFFFF", fg = "#000000" })
 
     local cmp = require("cmp")
 

@@ -42,6 +42,7 @@ lazy.setup({
     require("plugins.tokyo-night-nvim"),
     require("plugins.nvim-web-devicons"),
     require("plugins.nvim-lualine"),
-    require("plugins.nvim-treesitter")
+    require("plugins.nvim-treesitter"),
+    require("plugins.copilot-vim")
   }
 })

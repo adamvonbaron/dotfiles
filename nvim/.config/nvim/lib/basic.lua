@@ -21,3 +21,4 @@ vim.opt.smartindent = true
 
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.signcolumn = "no"
+vim.opt.nu = true

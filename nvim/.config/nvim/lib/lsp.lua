@@ -4,21 +4,21 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
 
-vim.api.nvim_create_autocmd('LspAttach', {
-  --     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(event)
-    local client = vim.lsp.get_client_by_id(event.data.client_id)
-
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = event.buf,
-      callback = function()
-        vim.lsp.buf.format({
-          async = false,
-          filter = function(c)
-            return c.id == client.id
-          end
-        })
-      end
-    })
-  end,
-})
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--   --     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+--   callback = function(event)
+--     local client = vim.lsp.get_client_by_id(event.data.client_id)
+--
+--     vim.api.nvim_create_autocmd("BufWritePre", {
+--       buffer = event.buf,
+--       callback = function()
+--         vim.lsp.buf.format({
+--           async = false,
+--           filter = function(c)
+--             return c.id == client.id
+--           end
+--         })
+--       end
+--     })
+--   end,
+-- })

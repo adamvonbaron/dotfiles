@@ -26,5 +26,7 @@
   "vim-eunuch": { "branch": "master", "commit": "e86bb794a1c10a2edac130feb0ea590a00d03f1e" },
   "vim-go": { "branch": "master", "commit": "1d641b739624199ab9ab745d220f36fe7b655d65" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
-  "vim-test": { "branch": "master", "commit": "b0c3e13249699a522c8b472ff79eff40d2935476" }
+  "vim-test": { "branch": "master", "commit": "b0c3e13249699a522c8b472ff79eff40d2935476" },
+  "vim-vscode-theme": { "branch": "master", "commit": "be747b0a205975b0248845d8a8809caaffa91cac" },
+  "vscode.nvim": { "branch": "main", "commit": "5769f298af4abf371528b25623fecb1e069c858c" }
 }

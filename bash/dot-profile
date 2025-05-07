@@ -4,8 +4,12 @@ export PLAN9="/usr/local/plan9"
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.local/share/coursier/bin:$HOME/go/bin:$HOME/.cabal/bin:$HOME/.ghcup/bin:$HOME/perl5/bin:/usr/local/bin:/usr/local/go/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PLAN9/bin:$WASMTIME_HOME/bin:/snap/bin:/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin:/opt/st/stm32cubeclt_1.18.0/STM32CubeProgrammer/bin:/opt/st/stm32cubeclt_1.18.0/STLink-gdb-server/bin"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
-export STM32CubeMX_PATH=/home/adam/STM32CubeMX
+export STM32CubeMX_PATH=/home/adam/opt/st/STM32CubeMX
+
+# some STM tools use Java's GUI toolkit and need this for HiDPI displays
+export JAVA_TOOL_OPTIONS="-Dsun.java2d.uiScale=2.0"
 
 . "/home/adam/.deno/env"
 . "$HOME/.cargo/env"
+
 

@@ -4,14 +4,20 @@ return {
 		"onsails/lspkind.nvim",
 	},
 	config = function()
-		-- vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#FFFFFF", fg = "#000000" })
+		-- vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#121212", fg = "#000000" })
 
 		local cmp = require("cmp")
 
 		cmp.setup({
 			window = {
 				completion = {
-					winhighlight = "Normal:CmpNormal",
+					-- winhighlight = "Normal:CmpNormal",
+					winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+					col_offset = -3,
+					side_padding = 0,
+				},
+				documentation = {
+					winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
 				},
 			},
 			snippet = {
@@ -40,5 +46,8 @@ return {
 				{ name = "buffer" },
 			}),
 		})
+
+		vim.api.nvim_set_hl(0, "Pmenu", { bg = "#282c34", fg = "#abb2bf" })
+		vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#61afef", fg = "#282c34" })
 	end,
 }

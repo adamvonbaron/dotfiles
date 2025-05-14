@@ -31,3 +31,7 @@ gnupg/.gnupg/*
 
 # dont save msmtp log
 msmtp/.config/msmtp/log
+
+# dont save rocks from luarocks
+luarocks/.luarocks/*
+!luarocks/.luarocks/config-5.4.lua

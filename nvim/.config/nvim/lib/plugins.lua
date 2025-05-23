@@ -45,5 +45,6 @@ lazy.setup({
 		require("plugins.copilot-vim"),
 		require("plugins.bufferline-nvim"),
 		require("plugins.conform-nvim"),
+		require("plugins.vague-nvim"),
 	},
 })

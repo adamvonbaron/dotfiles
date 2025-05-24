@@ -46,5 +46,6 @@ lazy.setup({
 		require("plugins.bufferline-nvim"),
 		require("plugins.conform-nvim"),
 		require("plugins.vague-nvim"),
+		require("plugins.vim-mipssyntax"),
 	},
 })

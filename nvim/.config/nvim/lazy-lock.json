@@ -27,6 +27,7 @@
   "vim-dispatch": { "branch": "master", "commit": "a2ff28abdb2d89725192db5b8562977d392a4d3f" },
   "vim-eunuch": { "branch": "master", "commit": "e86bb794a1c10a2edac130feb0ea590a00d03f1e" },
   "vim-go": { "branch": "master", "commit": "59e208d5212b86c8afd69d8590f181594f859ddb" },
+  "vim-mipssyntax": { "branch": "master", "commit": "e2dd66e83a5b8f1ab1416b86b96856e0cb913faa" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-test": { "branch": "master", "commit": "b0c3e13249699a522c8b472ff79eff40d2935476" }
 }

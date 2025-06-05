@@ -14,7 +14,7 @@ vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.signcolumn = "no"
 vim.opt.nu = true
 -- vim.cmd("colorscheme quiet")
-vim.cmd("colorscheme vague")
+vim.cmd("colorscheme onedark")
 vim.opt.termguicolors = true
 -- vim.opt.background = "light"
 

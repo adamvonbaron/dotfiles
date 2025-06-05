@@ -8,7 +8,7 @@ return {
 			options = {
 				icons_enabled = true,
 				-- theme = "auto",
-				theme = "vague",
+				theme = "onedark",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {

@@ -1,15 +1,14 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: Ubuntu Mono;
+  font-family: JetBrainsMono Nerd Font;
   font-size: 14px;
   min-height: 0;
 }
 
 window#waybar {
-  background-color: #bfbfbf;
-  /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-  color: #141414;
+  background-color: #282c34;
+  color: #abb2bf;
   transition-property: background-color;
   transition-duration: .5s;
 }
@@ -51,15 +50,14 @@ window#waybar.hidden {
 #temperature,
 #backlight,
 #network,
-#pulseaudio,
+#wireplumber,
 #custom-media,
 #tray,
 #mode,
-#idle_inhibitor,
-#mpd {
+#idle_inhibitor {
   padding: 0 10px;
   margin: 0 4px;
-  color: #141414;
+  color: #abb2bf;
 }
 
 #window,

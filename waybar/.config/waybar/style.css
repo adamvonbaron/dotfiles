@@ -7,8 +7,8 @@
 }
 
 window#waybar {
-  background-color: #282c34;
-  color: #abb2bf;
+  background-color: #1a1b26;
+  color: #c0caf5;
   transition-property: background-color;
   transition-duration: .5s;
 }
@@ -20,7 +20,7 @@ window#waybar.hidden {
 #workspaces button {
   padding: 0 5px;
   background-color: transparent;
-  color: #c5c8c6;
+  color: #c0caf5;
   box-shadow: inset 0 -3px transparent;
 }
 
@@ -30,7 +30,7 @@ window#waybar.hidden {
 }
 
 #workspaces button.focused {
-  background-color: #64727D;
+  background-color: #1a1b26;
   box-shadow: inset 0 -3px #c5c8c6;
 }
 
@@ -39,7 +39,7 @@ window#waybar.hidden {
 }
 
 #mode {
-  background-color: #64727D;
+  background-color: #1a1b26;
   border-bottom: 3px solid #c5c8c6;
 }
 

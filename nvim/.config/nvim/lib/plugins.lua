@@ -46,6 +46,6 @@ lazy.setup({
 		require("plugins.bufferline-nvim"),
 		require("plugins.conform-nvim"),
 		require("plugins.vim-mipssyntax"),
-		require("plugins.onedark-nvim"),
+		require("plugins.tokyonight-nvim"),
 	},
 })

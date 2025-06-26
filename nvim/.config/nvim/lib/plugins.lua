@@ -43,7 +43,7 @@ lazy.setup({
 		require("plugins.nvim-lualine"),
 		require("plugins.nvim-treesitter"),
 		require("plugins.copilot-vim"),
-		require("plugins.bufferline-nvim"),
+		-- require("plugins.bufferline-nvim"),
 		require("plugins.conform-nvim"),
 		require("plugins.vim-mipssyntax"),
 		require("plugins.tokyonight-nvim"),

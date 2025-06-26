@@ -5,17 +5,17 @@ return {
 		local builtin = require("telescope.builtin")
 
 		telescope.setup({
-      pickers = {
-        find_files = {
-          no_ignore = true,
-        },
-        live_grep = {
-          additional_args = function(_)
-            return { "--hidden", "--no-ignore" }
-          end,
-        }
-      }
-    })
+			pickers = {
+				find_files = {
+					no_ignore = true,
+				},
+				live_grep = {
+					additional_args = function(_)
+						return { "--hidden", "--no-ignore" }
+					end,
+				},
+			},
+		})
 
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })

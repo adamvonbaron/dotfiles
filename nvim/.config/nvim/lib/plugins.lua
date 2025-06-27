@@ -47,5 +47,6 @@ lazy.setup({
 		require("plugins.conform-nvim"),
 		require("plugins.vim-mipssyntax"),
 		require("plugins.tokyonight-nvim"),
+		require("plugins.nvim-dap"),
 	},
 })

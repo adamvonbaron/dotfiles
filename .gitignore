@@ -36,6 +36,8 @@ msmtp/.config/msmtp/log
 luarocks/.luarocks/*
 !luarocks/.luarocks/config-5.4.lua
 
-# only save claude code user commands
+# only save claude code user commands and user memory
 claude/.claude/*
 !claude/.claude/commands/
+!claude/.claude/CLAUDE.md
+!claude/.claude/memory/

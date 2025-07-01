@@ -35,3 +35,7 @@ msmtp/.config/msmtp/log
 # dont save rocks from luarocks
 luarocks/.luarocks/*
 !luarocks/.luarocks/config-5.4.lua
+
+# only save claude code user commands
+claude/.claude/*
+!claude/.claude/commands/

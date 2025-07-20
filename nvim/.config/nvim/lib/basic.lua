@@ -35,3 +35,6 @@ vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
 -- -- set search background and foreground
 -- vim.cmd("highlight IncSearch cterm=NONE gui=NONE ctermbg=7 guibg=#d3d3d3")
 -- vim.cmd("highlight IncSearch cterm=NONE gui=NONE ctermfg=0 guifg=#000000")
+
+-- primarily used for navigating through kernel source tree
+vim.opt.tags = "./tags;,tags"

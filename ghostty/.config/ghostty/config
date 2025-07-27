@@ -1,9 +1,9 @@
 font-family=Dejavu Sans Mono
 font-size = 10
-shell-integration-features = no-cursor
+shell-integration = bash
+shell-integration-features = no-cursor,title,sudo
 cursor-style = block
 cursor-style-blink = true
-shell-integration = bash
 mouse-hide-while-typing = true
 
 # lackluster

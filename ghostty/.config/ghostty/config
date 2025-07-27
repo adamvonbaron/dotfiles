@@ -5,6 +5,7 @@ shell-integration-features = no-cursor,title,sudo
 cursor-style = block
 cursor-style-blink = true
 mouse-hide-while-typing = true
+link-url = true
 
 # lackluster
 palette = 0=#080808

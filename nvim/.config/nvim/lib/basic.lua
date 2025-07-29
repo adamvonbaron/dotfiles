@@ -13,10 +13,10 @@ vim.opt.smartindent = true
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.signcolumn = "no"
 vim.opt.nu = true
--- vim.cmd("colorscheme quiet")
 vim.cmd("colorscheme lackluster-night")
 vim.opt.termguicolors = true
--- vim.opt.background = "light"
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
 
 -- set background to terminal background color
 -- vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")

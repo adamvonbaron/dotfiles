@@ -65,7 +65,7 @@ return {
 			end,
 		})
 
-		lspconfig["solargraph"].setup({
+		lspconfig["ruby_lsp"].setup({
 			capabilities = capabilities,
 			on_attach = function(client)
 				client.server_capabilities.semanticTokensProvider = nil

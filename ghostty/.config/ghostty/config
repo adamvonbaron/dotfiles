@@ -1,4 +1,4 @@
-font-family=Dejavu Sans Mono
+font-family=Roboto Mono
 font-size = 10
 shell-integration = bash
 shell-integration-features = no-cursor,title,sudo

@@ -38,6 +38,9 @@ test -s ~/Source/emsdk/emsdk_env.sh && . ~/Source/emsdk/emsdk_env.sh || true
 # set up ocaml
 eval $(opam env)
 
+# setup rbenv
+eval "$(rbenv init - --no-rehash bash)"
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 

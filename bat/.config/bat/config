@@ -1,1 +1,2 @@
---theme="ansi"
+--theme="base16"
+--style="numbers,changes,header"

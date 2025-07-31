@@ -51,5 +51,6 @@ lazy.setup({
 		require("plugins.todo-comments-nvim"),
 		require("plugins.nvim-dap"),
 		require("plugins.claude-code"),
+		require("plugins.vim-rails"),
 	},
 })

@@ -41,3 +41,5 @@ claude/.claude/*
 !claude/.claude/commands/
 !claude/.claude/CLAUDE.md
 !claude/.claude/memory/
+
+zed/.config/zed/themes/

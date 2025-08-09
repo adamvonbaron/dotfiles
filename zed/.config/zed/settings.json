@@ -17,7 +17,7 @@
   },
   "vim_mode": true,
   "ui_font_size": 15,
-  "ui_font_family": "Roboto Slab",
+  "ui_font_family": "Roboto",
   "buffer_font_size": 13,
   "buffer_font_family": "Roboto Mono",
   "buffer_font_features": {},

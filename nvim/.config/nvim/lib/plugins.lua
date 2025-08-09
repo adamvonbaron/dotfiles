@@ -43,14 +43,12 @@ lazy.setup({
 		require("plugins.nvim-web-devicons"),
 		require("plugins.nvim-lualine"),
 		require("plugins.nvim-treesitter"),
-		require("plugins.copilot-vim"),
-		-- require("plugins.bufferline-nvim"),
 		require("plugins.conform-nvim"),
 		require("plugins.vim-mipssyntax"),
-		require("plugins.lackluster-nvim"),
 		require("plugins.todo-comments-nvim"),
 		require("plugins.nvim-dap"),
 		require("plugins.claude-code"),
 		require("plugins.vim-rails"),
+    require("plugins.onedark-nvim")
 	},
 })

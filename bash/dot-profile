@@ -15,8 +15,8 @@ export LUA_PATH='/usr/local/share/lua/5.4/?.lua;/usr/local/share/lua/5.4/?/init.
 export LUA_CPATH='/usr/local/lib/lua/5.4/?.so;/usr/local/lib/lua/5.4/loadall.so;./?.so;/home/adam/.luarocks/lib/lua/5.4/?.so'
 
 # use Adwaita-dark for GTK and Qt applications if possible
-export GTK_THEME="Adwaita:dark"
-export QT_STYLE_OVERRIDE="Adwaita-Dark"
+# export GTK_THEME="Adwaita:dark"
+# export QT_STYLE_OVERRIDE="Adwaita-Dark"
 
 . "/home/adam/.deno/env"
 . "$HOME/.cargo/env"

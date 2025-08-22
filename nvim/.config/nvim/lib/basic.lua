@@ -13,13 +13,13 @@ vim.opt.smartindent = true
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.signcolumn = "no"
 vim.opt.nu = true
-vim.cmd("colorscheme lackluster-night")
+vim.cmd("colorscheme onedark")
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 
 -- set background to terminal background color
-vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+-- vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
 -- set visual select background to grey
 -- vim.cmd("highlight Visual cterm=NONE gui=NONE ctermbg=7 guibg=#d3d3d3")
 -- -- set visual select foreground to black

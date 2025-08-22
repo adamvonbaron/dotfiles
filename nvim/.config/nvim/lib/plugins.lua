@@ -49,6 +49,6 @@ lazy.setup({
 		require("plugins.nvim-dap"),
 		require("plugins.claude-code"),
 		require("plugins.vim-rails"),
-    require("plugins.lackluster-nvim")
+    require("plugins.onedark-nvim")
 	},
 })

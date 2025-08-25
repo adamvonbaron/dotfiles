@@ -192,5 +192,12 @@ return {
 				client.server_capabilities.semanticTokensProvider = nil
 			end,
 		})
+
+    lspconfig["kotlin_lsp"].setup({
+      capabilities = capabilities,
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end,
+    })
 	end,
 }

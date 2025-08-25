@@ -7,3 +7,4 @@ cursor-style-blink = true
 mouse-hide-while-typing = true
 link-url = true
 theme = tokyonight_night
+keybind = shift+enter=text:\n

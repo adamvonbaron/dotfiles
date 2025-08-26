@@ -26,7 +26,7 @@ return {
 				cpp = { "clang-format" },
 				go = { "goimports", "gofmt" },
 				asm = { "mac-mips" },
-				ruby = { "rubocop" },
+				ruby = { "rufo" },
 			},
 		})
 	end,

@@ -25,92 +25,53 @@ return {
 
 		lspconfig["yamlls"].setup({
 			capabilities = capabilities,
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 		})
 
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 		})
 
 		lspconfig["dockerls"].setup({
 			capabilities = capabilities,
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 		})
 
 		lspconfig["graphql"].setup({
 			capabilities = capabilities,
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 		})
 
 		lspconfig["html"].setup({
 			capabilities = capabilities,
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 		})
 
 		lspconfig["jsonls"].setup({
 			capabilities = capabilities,
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 		})
 
 		lspconfig["ruby_lsp"].setup({
 			capabilities = capabilities,
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 		})
 
 		lspconfig["sqlls"].setup({
 			capabilities = capabilities,
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 		})
 
 		lspconfig["pyright"].setup({
 			capabilities = capabilities,
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 		})
 
 		lspconfig["hls"].setup({
 			capabilities = capabilities,
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 		})
 
 		lspconfig["ocamllsp"].setup({
 			capabilities = capabilities,
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 		})
 
 		lspconfig["ccls"].setup({
 			capabilities = capabilities,
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 		})
 
 		lspconfig["gopls"].setup({
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 			cmd = { "gopls", "serve" },
 			filetypes = { "go", "gomod" },
 			root_dir = util.root_pattern("go.work", "go.mod", ".git"),
@@ -144,7 +105,6 @@ return {
 		-- bun install -g tsserver typescript-language-server
 		lspconfig["ts_ls"].setup({
 			on_attach = function(client, bufnr)
-				client.server_capabilities.semanticTokensProvider = nil
 				client.resolved_capabilities.document_formatting = false
 				client.resolved_capabilities.document_range_formatting = false
 				local ts_utils = require("nvim-lsp-ts-utils")
@@ -160,9 +120,6 @@ return {
 
 		lspconfig["rust_analyzer"].setup({
 			capabilities = capabilities,
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 		})
 
 		lspconfig["lua_ls"].setup({
@@ -188,18 +145,14 @@ return {
 
 		lspconfig["prismals"].setup({
 			capabilities = capabilities,
-			on_attach = function(client)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
 		})
 
     lspconfig["kotlin_lsp"].setup({
       capabilities = capabilities,
-      on_attach = function(client)
-        client.server_capabilities.semanticTokensProvider = nil
-      end,
     })
 
-    lspconfig["zls"].setup()
+    lspconfig["zls"].setup({
+      capabilities = capabilities,
+    })
 	end,
 }

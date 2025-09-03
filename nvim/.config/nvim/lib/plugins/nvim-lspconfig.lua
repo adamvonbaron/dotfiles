@@ -199,5 +199,7 @@ return {
         client.server_capabilities.semanticTokensProvider = nil
       end,
     })
+
+    lspconfig["zls"].setup()
 	end,
 }
